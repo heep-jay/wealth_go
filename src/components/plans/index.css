@@ -1,0 +1,58 @@
+.plans {
+  width: 100%;
+  padding: 1rem;
+}
+.plans-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.plans-header {
+  text-align: center;
+}
+
+.plan-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  row-gap: 2rem;
+  width: 100%;
+}
+
+.plan-card {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  /* height: 380px; */
+  width: 300px;
+  border-radius: 15px;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+.card-btn {
+  background: #5ba601;
+  padding: 0.6rem 5.5rem;
+  border: none;
+  color: #fff;
+  border-radius: 25px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+.card-btn:hover {
+  background: #165e3b;
+}

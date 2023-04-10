@@ -1,0 +1,37 @@
+.loginbanner {
+  width: 100%;
+  background: #f1f4ea;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  height: 250px;
+}
+.loginbanner-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.loginbanner-header {
+  text-align: center;
+}
+.loginbanner-btn {
+  padding: 1rem 4rem;
+  border: 2px solid #5ba601;
+  border-radius: 20px;
+  background: none;
+  font-size: 17px;
+  color: #5ba601;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+.loginbanner-btn:hover {
+  color: #fff;
+  background: #5ba601;
+  border: none;
+}

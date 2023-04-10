@@ -18,9 +18,9 @@ const Contact = () => {
             <button className="contact-btn">Submit</button>
           </div>
         </div>
-        <div className="contact-illus">
+        {/* <div className="contact-illus">
           <img src={contact} alt="" className="contact-img" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

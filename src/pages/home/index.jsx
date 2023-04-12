@@ -8,6 +8,7 @@ import LoginBanner from "../../components/loginbanner";
 import Contact from "../../components/contact";
 import HomeCarousel from "../../components/carousel";
 import Testimonials from "../../components/testimonials";
+import Works from "../../components/works";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       {/* <Hero /> */}
       <HomeCarousel />
       <Banner />
+      <Works />
       <About />
       <Plans />
       <LoginBanner />

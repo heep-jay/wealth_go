@@ -22,57 +22,57 @@ const Plans = () => {
         <div className="plan-cards">
           <div className="plan-card">
             <div className="card-header">
-              <h4 className="subtitle">Plan 1</h4>
-              <h2 className="title"> 20%</h2>
+              <h4 className="card_subtitle">Plan 1</h4>
+              <h2 className="card_title"> 20%</h2>
             </div>
             <img src={plan1} alt="" className="card-img" />
             <div className="card-body">
-              <p className="description">AFTER 24 HOURS</p>
-              <p className="description">Min : $35</p>
-              <p className="description">Max : $499</p>
-              <p className="description">PRINCIPAL RETURN</p>
+              <p className="card-text">AFTER 24 HOURS</p>
+              <p className="card-text">Min : $35</p>
+              <p className="card-text">Max : $499</p>
+              <p className="card-text">PRINCIPAL RETURN</p>
             </div>
             <button className="card-btn">Invest</button>
           </div>
           <div className="plan-card">
             <div className="card-header">
-              <h4 className="subtitle">Plan 2</h4>
-              <h2 className="title"> 35%</h2>
+              <h4 className="card_subtitle">Plan 2</h4>
+              <h2 className="card_title"> 35%</h2>
             </div>
             <img src={plan2} alt="" className="card-img" />
             <div className="card-body">
-              <p className="description">AFTER 24 HOURS</p>
-              <p className="description">Min : $500</p>
-              <p className="description">Max : $999</p>
-              <p className="description">PRINCIPAL RETURN</p>
+              <p className="card-text">AFTER 24 HOURS</p>
+              <p className="card-text">Min : $500</p>
+              <p className="card-text">Max : $999</p>
+              <p className="card-text">PRINCIPAL RETURN</p>
             </div>
             <button className="card-btn">Invest</button>
           </div>
           <div className="plan-card">
             <div className="card-header">
-              <h4 className="subtitle">Plan 3</h4>
-              <h2 className="title"> 65%</h2>
+              <h4 className="card_subtitle">Plan 3</h4>
+              <h2 className="card_title"> 65%</h2>
             </div>
             <img src={plan3} alt="" className="card-img" />
             <div className="card-body">
-              <p className="description">AFTER 48 HOURS</p>
-              <p className="description">Min : $1000</p>
-              <p className="description">Max : $4999</p>
-              <p className="description">PRINCIPAL RETURN</p>
+              <p className="card-text">AFTER 48 HOURS</p>
+              <p className="card-text">Min : $1000</p>
+              <p className="card-text">Max : $4999</p>
+              <p className="card-text">PRINCIPAL RETURN</p>
             </div>
             <button className="card-btn">Invest</button>
           </div>
           <div className="plan-card">
             <div className="card-header">
-              <h4 className="subtitle">Plan 4</h4>
-              <h2 className="title"> 100%</h2>
+              <h4 className="card_subtitle">Plan 4</h4>
+              <h2 className="card_title"> 100%</h2>
             </div>
             <img src={plan4} alt="" className="card-img" />
             <div className="card-body">
-              <p className="description">AFTER 72 HOURS</p>
-              <p className="description">Min : $5000</p>
-              <p className="description">Max : $UNLIMITED</p>
-              <p className="description">PRINCIPAL RETURN</p>
+              <p className="card-text">AFTER 72 HOURS</p>
+              <p className="card-text">Min : $5000</p>
+              <p className="card-text">Max : $UNLIMITED</p>
+              <p className="card-text">PRINCIPAL RETURN</p>
             </div>
             <button className="card-btn">Invest</button>
           </div>

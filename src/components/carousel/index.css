@@ -6,11 +6,12 @@
 
 .carousel-caption {
   bottom: unset;
-  top: 15rem;
+  top: 13rem;
 }
 .hero-title {
   text-align: center;
   font-size: clamp(1.875rem, -0.625rem + 8vw, 3.875rem);
+  font-family: "Goldman", cursive;
   font-weight: 600;
   /* color: #165e3b; */
   color: white;
@@ -37,6 +38,7 @@
 
 .hero-color {
   color: #5ba601;
+  font-family: "Goldman", cursive;
 }
 
 @media screen and (max-width: 850px) {

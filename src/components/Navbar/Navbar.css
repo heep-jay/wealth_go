@@ -12,6 +12,7 @@ nav {
 }
 .nav-logo {
   color: #165e3b;
+  font-family: "Goldman", cursive;
 }
 .nav-links {
   /* display: flex; */
@@ -25,7 +26,7 @@ nav {
 .nav-listItems a {
   text-decoration: none;
   color: #5ba601;
-  font-size: 18px;
+  font-size: 16.5px;
   transition: all ease-in-out 0.3s;
 }
 .nav-listItems a:hover {

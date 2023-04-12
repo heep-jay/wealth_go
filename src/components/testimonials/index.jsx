@@ -1,6 +1,7 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { HeartBrokenRounded } from "@mui/icons-material";
 import avatar from "../../assets/avatar.jpg";
 import avatar2 from "../../assets/avatar2.jpg";
 import avatar3 from "../../assets/avatar3.jpg";
@@ -10,7 +11,21 @@ const Testimonials = () => {
     <div className="testimonials">
       <div className="testimonials-container">
         <div className="testimonials-header">
-          <h2 className="title">What Our customers have to say about us</h2>
+          <h2 className="title">
+            People{" "}
+            <HeartBrokenRounded
+              sx={{
+                fontSize: "40px",
+                color: "#5ba601",
+              }}
+            />{" "}
+            Us
+          </h2>
+
+          <p className="decription">
+            Over 13,000 people use WEALTHGO to invest in properties, mining, &
+            jews here's what a few of them have to say
+          </p>
         </div>
         <Carousel
           showArrows={true}

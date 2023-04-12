@@ -25,7 +25,8 @@
 }
 
 .plan-card {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 166, 1, 0.02) 0px 1px 3px 0px,
+    rgba(99, 166, 1, 0.15) 0px 0px 0px 1px;
   /* height: 380px; */
   width: 300px;
   border-radius: 15px;
@@ -35,24 +36,37 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  gap: 1rem;
+  gap: 0.4rem;
 }
 
 .card-img {
-  width: 100%;
-  height: 200px;
+  width: 50%;
+  height: 140px;
   object-fit: contain;
 }
 .card-btn {
-  background: #5ba601;
+  background: #fff;
   padding: 0.6rem 5.5rem;
-  border: none;
-  color: #fff;
-  border-radius: 25px;
+  border: 0.5px solid #5ba601;
+  color: #165e3b;
+  font-family: "Goldman", cursive;
+  border-radius: 7px;
   font-size: 17px;
   cursor: pointer;
   transition: all ease-in-out 0.3s;
 }
 .card-btn:hover {
   background: #165e3b;
+}
+.card-text {
+  font-size: 13px;
+}
+.card_title {
+  font-size: clamp(0.9375rem, 0.2344rem + 2.25vw, 1.5rem);
+  font-family: "Goldman", cursive;
+}
+.card_subtitle {
+  font-size: clamp(0.78125rem, 0.6641rem + 0.375vw, 0.875rem);
+  color: #5ba601;
+  font-family: "Goldman", cursive;
 }

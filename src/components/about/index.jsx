@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import country from "../../assets/mining.png";
-import farmer from "../../assets/house.png";
+import farmer from "../../assets/about.png";
 const About = () => {
   return (
     <div className="about">
@@ -25,7 +25,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="whychoose-container">
+      {/* <div className="whychoose-container">
         <div className="whychoose-text">
           <h5 className="subtitle">Why Choose Us ?</h5>
           <h2 className="title">
@@ -44,7 +44,7 @@ const About = () => {
         <div className="whychoose-img">
           <img className="about-illus" src={country} alt="country-farm" />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

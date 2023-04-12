@@ -2,6 +2,8 @@
   width: 100%;
   padding: 1rem;
   /* background: #f1f4ae; */
+  border-bottom: 1px solid #f1f4ea;
+  border-top: 1px solid #000;
 }
 .banner-container {
   width: 100%;

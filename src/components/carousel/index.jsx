@@ -26,8 +26,7 @@ const HomeCarousel = () => {
 
         <Carousel.Caption>
           <h3 className="hero-title ">
-            Investment in{" "}
-            <span className="hero-color">Gold Mining & Minerals</span>
+            Investment in <span className="hero-color">Gold Mining </span>
           </h3>
           <p className="hero-description">
             Wealth Go is the easiest way to Invest, Manage and Grow your capital

@@ -30,7 +30,8 @@
 }
 .contact-form {
   border: 1px solid #f2f2f2;
-  width: 90%;
+  width: 70%;
+  min-width: fit-content;
   height: 60px;
   border-radius: 80px;
   display: flex;
@@ -79,5 +80,18 @@
   }
   .contact-btn {
     padding: 0.5rem 2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-email {
+    flex: 0.6;
+  }
+  .contact-btn {
+    flex: 0.4;
+    padding: 0.5rem 1rem;
+  }
+  .contact-form {
+    height: 50px;
   }
 }

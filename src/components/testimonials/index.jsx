@@ -1,7 +1,7 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import { HeartBrokenRounded } from "@mui/icons-material";
+import { Favorite } from "@mui/icons-material";
 import avatar from "../../assets/avatar.jpg";
 import avatar2 from "../../assets/avatar2.jpg";
 import avatar3 from "../../assets/avatar3.jpg";
@@ -13,13 +13,13 @@ const Testimonials = () => {
         <div className="testimonials-header">
           <h2 className="title">
             People{" "}
-            <HeartBrokenRounded
+            <Favorite
               sx={{
                 fontSize: "40px",
                 color: "#5ba601",
               }}
             />{" "}
-            Us
+            Us and here's why
           </h2>
 
           <p className="decription">

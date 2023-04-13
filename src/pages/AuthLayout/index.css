@@ -48,6 +48,13 @@
   font-family: "Goldman", cursive;
   cursor: pointer;
 }
+.auth-logo a {
+  text-decoration: none;
+  font-family: "Goldman", cursive;
+  font-size: 24px;
+  font-weight: 800;
+  color: black;
+}
 .auth-inner {
   width: 90%;
   max-width: 500px;

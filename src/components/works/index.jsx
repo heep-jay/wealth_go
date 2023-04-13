@@ -40,7 +40,7 @@ const Works = () => {
               <img src={invest} alt="sign up" className="work-img" />
             </div>
             <div className="work-text">
-              <p className="description">Choose a plan and invest 👌🙂</p>
+              <p className="description">Choose a plan and invest 😊</p>
             </div>
           </div>
         </div>

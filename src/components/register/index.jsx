@@ -29,6 +29,16 @@ const Register = () => {
           <label htmlFor="cpassword">Confirm Password</label>
           <input type="password" name="cpassword" />
         </div>
+        <div className="form-check">
+          <input type="checkbox" name="terms" id="" />
+          <p className="description">
+            i agree to WealthGO's{" "}
+            <span style={{ fontWeight: 600 }}>
+              {" "}
+              &nbsp; T & C & Privacy Policy
+            </span>
+          </p>
+        </div>
         <div className="login-btn">
           <button>Sign Up</button>
         </div>

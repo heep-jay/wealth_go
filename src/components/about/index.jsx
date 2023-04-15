@@ -2,7 +2,10 @@ import React from "react";
 import "./index.css";
 import country from "../../assets/mining.png";
 import farmer from "../../assets/about.png";
+import { useLocation } from "react-router-dom";
 const About = () => {
+  const location = useLocation();
+  console.log(location.pathname, "hey", window.location.pathname);
   return (
     <div className="about">
       <div className="about-container">

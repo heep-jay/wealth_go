@@ -8,8 +8,8 @@
   width: 40%;
   height: 100%;
   min-height: 400px;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   /* padding: 1rem; */
   position: relative;
   background: linear-gradient(rgba(91, 166, 1, 0.85), rgba(91, 166, 1, 0.85)),

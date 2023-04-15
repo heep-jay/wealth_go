@@ -9,8 +9,13 @@ import Contact from "../../components/contact";
 import HomeCarousel from "../../components/carousel";
 import Testimonials from "../../components/testimonials";
 import Works from "../../components/works";
+import { useLocation } from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar";
+import { Element } from "react-scroll";
 
 const Home = () => {
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <div className="home">
       <coingecko-coin-price-marquee-widget
@@ -23,11 +28,17 @@ const Home = () => {
       <HomeCarousel />
       <Banner />
       <Works />
-      <About />
-      <Plans />
+      <Element id="abouts" name="about">
+        <About />
+      </Element>
+      <Element id="plans" name="plans">
+        <Plans />
+      </Element>
       <LoginBanner />
       <Testimonials />
-      <Contact />
+      <Element id="contact" name="contact">
+        <Contact />
+      </Element>
     </div>
   );
 };

@@ -15,7 +15,7 @@
   font-family: "Goldman", cursive;
   color: #165e3b;
   font-weight: 600;
-  font-size: clamp(1.0625rem, 1.011rem + 0.4118vw, 1.5rem);
+  font-size: clamp(1.25rem, 1.011rem + 0.4118vw, 1.5rem);
 }
 .form_input {
   display: flex;
@@ -54,10 +54,11 @@
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  /* gap: 0.4rem; */
+  margin-bottom: 2rem;
 }
 .register a {
-  font-style: italic;
+  /* font-style: italic; */
   text-decoration: none;
   color: #165e3b;
 }

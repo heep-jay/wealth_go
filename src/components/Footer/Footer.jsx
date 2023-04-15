@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import fb from "../../assets/fb.svg";
+import ig from "../../assets/ig.svg";
+import twitter from "../../assets/twitter.svg";
 import "./footer.css";
 const Footer = () => {
   return (
@@ -8,7 +11,13 @@ const Footer = () => {
         <div className="footer-top">
           <div className="footer-logo">
             <h1>WealthGO</h1>
+            <div className="footer-socials">
+              <img src={fb} alt="" />
+              <img src={ig} alt="" />
+              <img src={twitter} alt="" />
+            </div>
           </div>
+
           <div className="footer-links">
             <h6>USEFUL LINKS</h6>
             <ul>

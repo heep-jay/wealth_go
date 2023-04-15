@@ -22,7 +22,7 @@ const Works = () => {
               <img src={create} alt="sign up" className="work-img" />
             </div>
             <div className="work-text">
-              <p className="description">Sign up and create a free account</p>
+              <p className="work-desc">Create a free account</p>
             </div>
           </div>
           <div className="works-step">
@@ -30,9 +30,7 @@ const Works = () => {
               <img src={bank} alt="sign up" className="work-img" />
             </div>
             <div className="work-text">
-              <p className="description">
-                Fund your account with the crptocurrency of choice available
-              </p>
+              <p className="work-desc">Fund your account</p>
             </div>
           </div>
           <div className="works-step">
@@ -40,7 +38,7 @@ const Works = () => {
               <img src={invest} alt="sign up" className="work-img" />
             </div>
             <div className="work-text">
-              <p className="description">Choose a plan and invest 😊</p>
+              <p className="work-desc">Choose a plan and invest 😊</p>
             </div>
           </div>
         </div>

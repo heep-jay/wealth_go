@@ -16,6 +16,8 @@ import Snaps from "../../components/snaps";
 import Tags from "../../components/tag";
 import Reasons from "../../components/reasons";
 import News from "../../components/news";
+import Invest from "../../components/invest";
+import Choose from "../../components/choose";
 
 const Home = () => {
   const location = useLocation();
@@ -40,10 +42,12 @@ const Home = () => {
       <Element id="plans" name="plans">
         <Plans />
       </Element>
+      <Invest />
       <LoginBanner />
       <News />
       {/* <Snaps /> */}
       <Testimonials />
+      <Choose />
       <Element id="contact" name="contact">
         <Contact />
       </Element>

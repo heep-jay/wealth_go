@@ -11,6 +11,24 @@
   margin: 2rem auto;
   color: #fff;
 }
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.footer-logo h1 {
+  font-family: "Goldman", cursive;
+}
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-socials img {
+  width: 35px;
+  cursor: pointer;
+}
 .footer-top,
 .footer-bottom {
   display: flex;
@@ -27,6 +45,7 @@
 .footer-crypto h6 {
   font-size: 16px;
   font-weight: 400;
+  font-family: "Goldman", cursive;
 }
 .footer-crypto h6 {
   margin-bottom: 1.4rem;

@@ -10,7 +10,7 @@ import {
 import FlexBetween from "../FlexBetween";
 // import { useDispatch } from "react-redux";
 // import { setMode } from "state";
-// import profileImage from "assets/profile.jpeg";
+import profileImage from "../../assets/avatar.jpg";
 import {
   AppBar,
   Button,
@@ -46,34 +46,29 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
           <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
-          <FlexBetween
-            backgroundColor={"#5ba601"}
+          {/* <FlexBetween
+            backgroundColor={"#f5f5f5"}
             borderRadius="9px"
-            gap="3rem"
-            p="0.1rem 1.5rem"
+            gap="1rem"
+            p="0.1rem 1rem"
           >
-            <InputBase placeholder="Search..." />
+            <InputBase
+              placeholder="Search..."
+              sx={{
+                flexGrow: "1",
+              }}
+            />
             <IconButton>
               <Search />
             </IconButton>
-          </FlexBetween>
+          </FlexBetween> */}
         </FlexBetween>
 
         {/* Right Side */}
         <FlexBetween gap="1.5rem">
-          <IconButton
-          //   onClick={() => dispatch(setMode())}
-          >
-            <DarkModeOutlined sx={{ fontSize: "25px" }} />
-            {/* {theme.palette.mode === "dark" ? (
-           
-            ) : (
-              <LightModeOutlined sx={{ fontSize: "25px" }} />
-            )} */}
-          </IconButton>
-          <IconButton>
+          {/* <IconButton>
             <SettingsOutlined sx={{ fontSize: "25px" }} />
-          </IconButton>
+          </IconButton> */}
           <FlexBetween>
             <Button
               onClick={handleClick}
@@ -89,7 +84,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               <Box
                 component="img"
                 alt="profile"
-                // src={profileImage}
+                src={profileImage}
                 height="32px"
                 width="32px"
                 borderRadius="50%"

@@ -12,6 +12,10 @@ import Works from "../../components/works";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import { Element } from "react-scroll";
+import Snaps from "../../components/snaps";
+import Tags from "../../components/tag";
+import Reasons from "../../components/reasons";
+import News from "../../components/news";
 
 const Home = () => {
   const location = useLocation();
@@ -26,8 +30,10 @@ const Home = () => {
       ></coingecko-coin-price-marquee-widget>
       {/* <Hero /> */}
       <HomeCarousel />
-      <Banner />
+      <Tags />
+      <Reasons />
       <Works />
+      <Banner />
       <Element id="abouts" name="about">
         <About />
       </Element>
@@ -35,6 +41,8 @@ const Home = () => {
         <Plans />
       </Element>
       <LoginBanner />
+      <News />
+      {/* <Snaps /> */}
       <Testimonials />
       <Element id="contact" name="contact">
         <Contact />

@@ -2,7 +2,7 @@
   width: 100%;
   padding: 1rem 2rem;
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url("../../assets/contactbg.jpg");
+    url("../../assets/contact.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,6 +24,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.contact-text h2 {
+  color: #5ba601;
 }
 .contact-text p {
   color: white;

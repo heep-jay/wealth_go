@@ -6,7 +6,10 @@ const LoginBanner = () => {
     <div className="loginbanner">
       <div className="loginbanner-container">
         <div className="loginbanner-header">
-          <h1 className="title">Don't have an account?</h1>
+          <h1 className="title">
+            Become part of a community of people who have found their path to
+            the crypto world with WealthGO
+          </h1>
         </div>
         <div className="">
           <button className="loginbanner-btn">Get Started</button>

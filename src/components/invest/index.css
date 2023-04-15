@@ -41,5 +41,8 @@
 }
 .invest-card img {
   width: 100%;
-  max-width: 70px;
+  max-width: 50px;
+}
+.invest-text {
+  text-align: center;
 }

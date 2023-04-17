@@ -38,13 +38,14 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
         position: "static",
         background: "none",
         boxShadow: "none",
+        borderBottom: "0.5px solid #e2f0e9",
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Left Side */}
         <FlexBetween>
           <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-            <MenuIcon />
+            <MenuIcon sx={{ color: "#165e3b", fontSize: "30px" }} />
           </IconButton>
           {/* <FlexBetween
             backgroundColor={"#f5f5f5"}

@@ -13,24 +13,20 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-
+import PaymentsIcon from "@mui/icons-material/Payments";
 import {
   ChevronLeft,
-  ChevronRightRounded,
   SettingsOutlined,
   HomeOutlined,
+  ChevronRightOutlined,
   ShoppingCartOutlined,
   Groups2Outlined,
   ReceiptLongOutlined,
+  UpgradeOutlined,
   PublicOutlined,
-  PointOfSaleOutlined,
-  TodayOutlined,
-  CalendarMonthOutlined,
-  AdminPanelSettingsOutlined,
-  PieChartOutlined,
-  TrendingUpOutlined,
-  ChevronRightOutlined,
+  PersonOutlineOutlined,
 } from "@mui/icons-material";
+
 import FlexBetween from "../FlexBetween";
 import avatar from "../../assets/avatar.jpg";
 
@@ -39,30 +35,31 @@ const navItems = [
     text: "Dashboard",
     icon: <HomeOutlined />,
   },
-  {
-    text: "Client Facing",
-    icon: null,
-  },
-  {
-    text: "Profile",
-    icon: <ShoppingCartOutlined />,
-  },
+  // {
+  //   text: "Client Facing",
+  //   icon: null,
+  // },
+
   {
     text: "Deposits",
-    icon: <Groups2Outlined />,
+    icon: <PaymentsIcon />,
+  },
+  {
+    text: "Withdrawals",
+    icon: <PublicOutlined />,
   },
   {
     text: "Transactions",
     icon: <ReceiptLongOutlined />,
   },
-  {
-    text: "Geography",
-    icon: <PublicOutlined />,
-  },
 
   {
     text: "Upgrade Plan",
-    icon: <PointOfSaleOutlined />,
+    icon: <UpgradeOutlined />,
+  },
+  {
+    text: "Profile",
+    icon: <PersonOutlineOutlined />,
   },
 ];
 
@@ -94,8 +91,8 @@ const Sidebar = ({
           sx={{
             width: drawerWidth,
             "& .MuiDrawer-paper": {
-              color: "#5ba601",
-              backgroundColor: "#f5f5f5",
+              color: "#fff",
+              backgroundColor: "#165e3b",
               boxSizing: "border-box",
               borderWidth: isNonMobile ? 0 : "2px",
               width: drawerWidth,
@@ -104,7 +101,7 @@ const Sidebar = ({
         >
           <Box width="100%">
             <Box m="1.5rem 2rem 2rem 3rem">
-              <FlexBetween color="#165e3b">
+              <FlexBetween color="#fff">
                 <Box
                   display="flex"
                   alignItems="center"
@@ -151,14 +148,14 @@ const Sidebar = ({
                       }}
                       sx={{
                         backgroundColor:
-                          active === lcText ? "#55a37d" : "transparent",
-                        color: active === lcText ? "#222" : "#5ba601",
+                          active === lcText ? "#5ba601" : "transparent",
+                        color: active === lcText ? "#fff" : "#fff",
                       }}
                     >
                       <ListItemIcon
                         sx={{
                           ml: "2rem",
-                          color: active === lcText ? "#222" : "#5ba601",
+                          color: active === lcText ? "#fff" : "#fff",
                         }}
                       >
                         {icon}

@@ -11,6 +11,7 @@ import DashboardLayout from "./pages/DashboardLayout";
 import Profile from "./pages/profile";
 import Transactions from "./pages/transactions";
 import Dashboard from "./pages/dashboard";
+import Deposits from "./pages/deposits";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           </Route>
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/deposits" element={<Deposits />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/transactions" element={<Transactions />} />
           </Route>

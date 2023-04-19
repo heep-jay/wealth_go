@@ -62,7 +62,7 @@
   font-weight: 600;
 }
 
-.card-text {
+.cards-text {
   font-size: clamp(1.125rem, 1.0568rem + 0.5455vw, 1.5rem);
   color: #165e3b;
   font-family: "Goldman", cursive;

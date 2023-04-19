@@ -6,7 +6,7 @@ import plan3 from "../../assets/plan3.png";
 import plan4 from "../../assets/plan4.png";
 import "./index.css";
 
-const Plans = () => {
+const Plans = ({ name }) => {
   return (
     <div className="plans">
       <div className="plans-container">
@@ -32,7 +32,7 @@ const Plans = () => {
               <p className="card-text">Max : $499</p>
               <p className="card-text">PRINCIPAL RETURN</p>
             </div>
-            <button className="card-btn">Invest</button>
+            <button className="card-btn">{name}</button>
           </div>
           <div className="plan-card">
             <div className="card-header">
@@ -46,7 +46,7 @@ const Plans = () => {
               <p className="card-text">Max : $999</p>
               <p className="card-text">PRINCIPAL RETURN</p>
             </div>
-            <button className="card-btn">Invest</button>
+            <button className="card-btn">{name}</button>
           </div>
           <div className="plan-card">
             <div className="card-header">
@@ -60,7 +60,7 @@ const Plans = () => {
               <p className="card-text">Max : $4999</p>
               <p className="card-text">PRINCIPAL RETURN</p>
             </div>
-            <button className="card-btn">Invest</button>
+            <button className="card-btn">{name}</button>
           </div>
           <div className="plan-card">
             <div className="card-header">
@@ -74,7 +74,7 @@ const Plans = () => {
               <p className="card-text">Max : $UNLIMITED</p>
               <p className="card-text">PRINCIPAL RETURN</p>
             </div>
-            <button className="card-btn">Invest</button>
+            <button className="card-btn">{name}</button>
           </div>
         </div>
       </div>

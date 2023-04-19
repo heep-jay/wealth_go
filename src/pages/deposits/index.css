@@ -16,21 +16,22 @@
 }
 .deposit-card {
   width: 350px;
-  height: 500px;
+  height: 400px;
   box-shadow: rgba(24, 94, 59, 0.2) 0px 2px 8px 0px;
   cursor: pointer;
   border-radius: 20px;
   padding: 1rem;
-  gap: 1rem;
+
   display: flex;
   align-items: center;
+  gap: 1rem;
   justify-content: center;
   flex-direction: column;
   position: relative;
 }
 .deposit-card img {
   width: 70%;
-  max-width: 150px;
+  max-width: 120px;
 }
 .deposit-btn {
   position: absolute;

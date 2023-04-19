@@ -23,7 +23,7 @@ const Dashboard = () => {
                   fontSize: "45px",
                 }}
               />
-              <p className="card-text">Account Balance</p>
+              <p className="cards-text">Account Balance</p>
             </FlexBetween>
             <div className="card-mid-left">
               <p className="title">$16,900,000</p>
@@ -38,7 +38,7 @@ const Dashboard = () => {
                   fontSize: "45px",
                 }}
               />
-              <p className="card-text">Total Deposits</p>
+              <p className="cards-text">Total Deposits</p>
             </FlexBetween>
 
             <div className="card-mid-left">
@@ -53,7 +53,7 @@ const Dashboard = () => {
                   fontSize: "45px",
                 }}
               />
-              <p className="card-text">Total Withdrawals</p>
+              <p className="cards-text">Total Withdrawals</p>
             </FlexBetween>
             <div className="card-mid-left">
               <p className="title">$16,900,000</p>

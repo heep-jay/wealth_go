@@ -45,7 +45,7 @@ const navItems = [
     icon: <PaymentsIcon />,
   },
   {
-    text: "Withdrawals",
+    text: "Withdraw",
     icon: <PublicOutlined />,
   },
   {
@@ -54,7 +54,7 @@ const navItems = [
   },
 
   {
-    text: "Upgrade Plan",
+    text: "Plans",
     icon: <UpgradeOutlined />,
   },
   {

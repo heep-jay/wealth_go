@@ -10,10 +10,13 @@ const Header = ({ dashtitle, dashsub }) => {
         color="#165e3b"
         fontWeight="bold"
         sx={{ mb: "5px" }}
+        fontFamily='"Goldman", cursive'
       >
         {dashtitle}
       </Typography>
-      <Typography color="#000">{dashsub}</Typography>
+      <Typography fontFamily='"DM Sans", sans-serif' color="#000">
+        {dashsub}
+      </Typography>
     </Box>
   );
 };

@@ -46,6 +46,8 @@
   background: #5ba601;
   color: #fff;
   font-size: 17px;
+  color: #fff;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 750px) {

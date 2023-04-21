@@ -15,8 +15,9 @@ const HomeCarousel = () => {
             Investment in <span className="hero-color">Agriculture</span>
           </h3>
           <p className="hero-description">
-            Wealth Go is the easiest way to Invest, Manage and Grow your capital
-            in agriculture. Sign up and start growing your profit today!.
+            The Only Crypto Solution You'll Ever Need
+            Join millions of people globally, to invest, manage 
+            and grow cryptocurrencies the secure and seamless way. Sign up and start growing your profit today!.
           </p>
           <button className="hero-btn">Get Started</button>
         </Carousel.Caption>

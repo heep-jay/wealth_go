@@ -53,7 +53,7 @@ const Choose = () => {
                 first regardless of net capital worth, account type or size of
                 investment. All our clients receive the same quality services,
                 the same execution, and the same level of support.
-                goldensmart-invest.com was founded on these values, and that
+                WealthGo.com was founded on these values, and that
                 will not change.
               </p>
               <hr />
@@ -67,7 +67,7 @@ const Choose = () => {
                 Our clients can choose to trade forex and CFDs on stock indices,
                 commodities, stocks, metals and energies from the same trading
                 account. With a wide range of trading instruments available from
-                a single multi asset platform goldensmart-invest.com makes
+                a single multi asset platform WealthGo.com makes
                 investing easier and efficient.
               </p>
               <hr />
@@ -78,7 +78,7 @@ const Choose = () => {
             <div className="choose-text">
               <h4 className="ch-title">Transparent and Fair</h4>
               <p className="ch-desc">
-                At goldensmart-invest.com what you see is what you get, with no
+                At WealthGo.com what you see is what you get, with no
                 hidden terms. Be that pricing, execution or promotions. What we
                 advertise is what we give our clients, regardless of the size of
                 their investment.

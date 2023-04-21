@@ -32,20 +32,12 @@ const Works = () => {
               <img src={bank} alt="sign up" className="work-img" />
             </div>
             <div className="work-text">
-              <p className="work-desc">Fund your account</p>
+              <p className="work-desc">Choose a plan and invest</p>
             </div>
           </div>
           <div className="works-step">
             <div className="img-div green">
               <img src={invest} alt="sign up" className="work-img" />
-            </div>
-            <div className="work-text">
-              <p className="work-desc">Choose a plan and invest</p>
-            </div>
-          </div>
-          <div className="works-step">
-            <div className="img-div blue">
-              <img src={investment} alt="sign up" className="work-img" />
             </div>
             <div className="work-text">
               <p className="work-desc">Make deposit & start earning</p>

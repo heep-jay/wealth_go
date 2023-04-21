@@ -2,6 +2,7 @@ import React from "react";
 import "./index.css";
 import country from "../../assets/mining.png";
 import farmer from "../../assets/about.png";
+import aboutus from "../../assets/aboutus.jpeg";
 import { useLocation } from "react-router-dom";
 const About = () => {
   const location = useLocation();
@@ -10,7 +11,7 @@ const About = () => {
     <div className="about">
       <div className="about-container">
         <div className="about-img">
-          <img className="about-illus" src={farmer} alt="farmer-bro" />
+          <img className="about-illus" src={aboutus} alt="farmer-bro" />
         </div>
         <div className="about-text">
           <h5 className="subtitle">About Us</h5>

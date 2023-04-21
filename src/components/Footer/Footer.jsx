@@ -22,17 +22,32 @@ const Footer = () => {
             <h6>USEFUL LINKS</h6>
             <ul>
               <li>
-                <Link>Home</Link>
+                <Link>Login</Link>
               </li>
+              <li>
+                <Link>Sign Up</Link>
+              </li>
+              <li>
+                <Link> Investment Plans</Link>
+              </li>
+              <li>
+                <Link>Mission</Link>
+              </li>
+              
+            </ul>
+          </div>
+          <div className="footer-links">
+            <h6>Support</h6>
+            <ul>
               <li>
                 <Link>About Us</Link>
               </li>
               <li>
-                <Link>Plans</Link>
-              </li>
-              <li>
                 <Link>Contact</Link>
               </li>
+              <li>
+                <Link> FAQS</Link>
+              </li>  
             </ul>
           </div>
           <div className="footer-crypto">
@@ -66,11 +81,7 @@ const Footer = () => {
 
         <hr />
         <p className="description footer-desc">
-          Mablyfarm Technologies UAB, Gedimino pr. 9, Vilnius 01105, Lithuania
-          (306074900) Which is authorized by the FCIS and is the onboarding
-          company. Mablyfarm Technologies Pte, 50 Raffles Place #37-00 Singapore
-          Land Tower, Singapore (048623). is a company registered in Singapore
-          (no:201716443G)
+          Contact Us: Rue de Toutes-Ames 1, 1204 Zurich Switzerland 
         </p>
       </div>
     </div>

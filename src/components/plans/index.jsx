@@ -11,24 +11,24 @@ const Plans = ({ name }) => {
     <div className="plans">
       <div className="plans-container">
         <div className="plans-header">
-          <h2 className="title">Check out our amazing plans</h2>
-          <p className="description" style={{ width: "60%", margin: "0 auto" }}>
+          <h2 className="title">Check Out Our Investment Plans</h2>
+          {/* <p className="description" style={{ width: "60%", margin: "0 auto" }}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio
             ducimus, nulla error veritatis eius dignissimos rem praesentium
             quisquam dolorum aut maiores exercitationem nisi non quo ipsa a id,
             expedita autem.
-          </p>
+          </p> */}
         </div>
         <div className="plan-cards">
           <div className="plan-card">
             <div className="card-header">
               <h4 className="card_subtitle">Plan 1</h4>
-              <h2 className="card_title"> 20%</h2>
+              <h2 className="card_title"> 10%</h2>
             </div>
             <img src={plan1} alt="" className="card-img" />
             <div className="card-body">
               <p className="card-text">AFTER 24 HOURS</p>
-              <p className="card-text">Min : $35</p>
+              <p className="card-text">Min : $30</p>
               <p className="card-text">Max : $499</p>
               <p className="card-text">PRINCIPAL RETURN</p>
             </div>
@@ -37,7 +37,7 @@ const Plans = ({ name }) => {
           <div className="plan-card">
             <div className="card-header">
               <h4 className="card_subtitle">Plan 2</h4>
-              <h2 className="card_title"> 35%</h2>
+              <h2 className="card_title"> 30%</h2>
             </div>
             <img src={plan2} alt="" className="card-img" />
             <div className="card-body">
@@ -51,7 +51,7 @@ const Plans = ({ name }) => {
           <div className="plan-card">
             <div className="card-header">
               <h4 className="card_subtitle">Plan 3</h4>
-              <h2 className="card_title"> 65%</h2>
+              <h2 className="card_title"> 60%</h2>
             </div>
             <img src={plan3} alt="" className="card-img" />
             <div className="card-body">

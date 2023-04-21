@@ -38,6 +38,7 @@
 .about-illus {
   width: 90%;
   min-width: 250px;
+  border-radius: 15px;
 }
 .about-cta {
   padding: 0.8rem 2rem;
@@ -46,6 +47,8 @@
   background: #5ba601;
   color: #fff;
   font-size: 17px;
+  color: #fff;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 750px) {

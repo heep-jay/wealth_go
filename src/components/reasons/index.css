@@ -27,8 +27,8 @@
   flex-wrap: wrap;
 }
 .reasons-card {
-  width: 400px;
-  height: 350px;
+  width: 300px;
+  height: 250px;
   padding: 1rem;
   border-radius: 12px;
   display: flex;

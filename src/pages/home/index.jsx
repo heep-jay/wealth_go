@@ -40,7 +40,7 @@ const Home = () => {
         <About />
       </Element>
       <Element id="plans" name="plans">
-        <Plans />
+        <Plans name="Invest" />
       </Element>
       <Invest />
       <LoginBanner />

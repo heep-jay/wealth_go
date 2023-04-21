@@ -54,9 +54,11 @@
   font-size: 17px;
   cursor: pointer;
   transition: all ease-in-out 0.3s;
+  white-space: nowrap;
 }
 .card-btn:hover {
   background: #165e3b;
+  color: #fff;
 }
 .card-text {
   font-size: 13px;

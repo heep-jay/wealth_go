@@ -31,6 +31,12 @@ ul {
   color: #165e3b;
   font-weight: 700;
 }
+.small-title {
+  font-size: clamp(1.5rem, 0.5625rem + 3vw, 1.75rem);
+  font-family: "Goldman", cursive;
+  color: #165e3b;
+  font-weight: 700;
+}
 
 .description {
   font-weight: 100;

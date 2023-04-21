@@ -11,6 +11,11 @@ import DashboardLayout from "./pages/DashboardLayout";
 import Profile from "./pages/profile";
 import Transactions from "./pages/transactions";
 import Dashboard from "./pages/dashboard";
+import Deposits from "./pages/deposits";
+import Usdt from "./pages/usdt";
+import Withdraw from "./pages/withdraw";
+import Plan from "./pages/plans";
+import ChangePassword from "./pages/changepassword";
 
 const App = () => {
   return (
@@ -27,7 +32,16 @@ const App = () => {
           </Route>
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/deposits" element={<Deposits />} />
+            <Route path="/deposits/payment" element={<Usdt />} />
+            <Route path="/withdraw" element={<Withdraw />} />
             <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/profile/changepassword"
+              element={<ChangePassword />}
+            />
+            <Route path="/plans" element={<Plan />} />
+
             <Route path="/transactions" element={<Transactions />} />
           </Route>
         </Routes>

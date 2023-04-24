@@ -45,10 +45,15 @@
 .rs-title {
   font-size: clamp(1.125rem, 1.0809rem + 0.3529vw, 1.5rem);
   font-weight: 600;
-  color: #165e3b;
+  font-family: "Lato";
+  color: #0000FF;
 }
 .rs-desc {
   font-size: clamp(0.8125rem, 0.7978rem + 0.1176vw, 0.9375rem);
   font-weight: 200;
+  font-family: "Lato";
   color: #222;
+}
+.title{
+  font-family: "Lato";
 }

@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   padding: 1rem 2rem;
-  background: #165e3b;
+  background: #0000FF;
 }
 .footer-container {
   display: flex;
@@ -11,6 +11,7 @@
   margin: 2rem auto;
   color: #fff;
 }
+
 .footer-logo {
   display: flex;
   flex-direction: column;
@@ -45,7 +46,7 @@
 .footer-crypto h6 {
   font-size: 16px;
   font-weight: 400;
-  font-family: "Goldman", cursive;
+  font-family: "Lato";
 }
 .footer-crypto h6 {
   margin-bottom: 1.4rem;

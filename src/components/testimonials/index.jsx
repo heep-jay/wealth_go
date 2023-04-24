@@ -18,7 +18,7 @@ const Testimonials = () => {
             <Favorite
               sx={{
                 fontSize: "40px",
-                color: "#5ba601",
+                color: "#0000FF",
               }}
             />{" "}
             Us and here's why

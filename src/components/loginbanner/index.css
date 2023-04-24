@@ -26,20 +26,20 @@
   text-align: center;
 }
 .loginbanner-header h1 {
-  color: #5ba601;
+  color: #0000FF;
 }
 .loginbanner-btn {
   padding: 1rem 4rem;
-  border: 0.5px solid #5ba601;
+  border: 0.5px solid #0000FF;
   border-radius: 12px;
   background: none;
   font-size: 17px;
-  color: #5ba601;
+  color: #0000FF;
   cursor: pointer;
   transition: all ease-in-out 0.3s;
 }
 .loginbanner-btn:hover {
   color: #fff;
-  background: #5ba601;
+  background: #0000FF;
   border: none;
 }

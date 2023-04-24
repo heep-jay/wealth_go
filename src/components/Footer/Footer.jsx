@@ -63,7 +63,7 @@ const Footer = () => {
         <hr />
         <div className="footer-bottom">
           <div className="copyright">
-            <h6>Copyright WealthGo</h6>
+            <h6>Copyright 2017-2023 ©️  All rights Reserved.</h6>
             <ul className="faq-links">
               <li>
                 <Link>Terms and Condition</Link>

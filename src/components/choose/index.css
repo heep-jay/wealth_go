@@ -46,7 +46,7 @@
 .choose-card hr {
   width: 20%;
   /* color: black; */
-  border: 1px solid #5ba601;
+  border: 1px solid #4cbef7;
 }
 
 .choose-text {
@@ -57,10 +57,11 @@
 .ch-title {
   font-weight: 600;
   text-align: left;
-  color: #165e3b;
-  font-family: "Goldman", cursive;
+  color: #0000FF;
+  font-family: "Lato";
 }
 .ch-desc {
+  font-family: "Lato";
   text-align: justify;
   font-weight: 200;
   font-size: 13.5px;
@@ -89,3 +90,5 @@
     width: 50%;
   }
 }
+
+

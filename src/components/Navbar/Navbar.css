@@ -12,8 +12,8 @@
   position: relative;
 }
 .nav-logo {
-  color: #165e3b;
-  font-family: "Goldman", cursive;
+  color: #0000FF;
+  font-family: "Lato";
 }
 .nav-links {
   /* display: flex; */
@@ -29,7 +29,7 @@
 }
 .nav-listItems a {
   text-decoration: none;
-  color: #5ba601;
+  color: #0000FF;
   font-size: 16.5px;
   transition: all ease-in-out 0.3s;
 }
@@ -41,7 +41,7 @@
 .nav-btn {
   border: none;
   color: #fff;
-  background: #5ba601;
+  background: #0000FF;
   padding: 0.4rem 1.6rem;
   border-radius: 20px;
   cursor: pointer;

@@ -20,7 +20,7 @@ ul {
 
 .subtitle {
   font-size: clamp(0.9375rem, 0.5469rem + 1.25vw, 1.45rem);
-  color: #5ba601;
+  color: #0000FF;
   font-family: "Goldman", cursive;
   font-style: italic;
 }
@@ -28,7 +28,7 @@ ul {
 .title {
   font-size: clamp(1.5rem, 0.5625rem + 3vw, 2.25rem);
   font-family: "Goldman", cursive;
-  color: #165e3b;
+  color: #0000FF;
   font-weight: 700;
 }
 .small-title {
@@ -40,7 +40,7 @@ ul {
 
 .description {
   font-weight: 100;
-  color: #165e3b;
+  color: #0000FF;
   font-size: clamp(0.875rem, 0.5625rem + 1vw, 1rem);
 }
 #root {

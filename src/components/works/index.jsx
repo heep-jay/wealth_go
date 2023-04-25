@@ -10,13 +10,10 @@ const Works = () => {
     <div className="works">
       <div className="works-container">
         <div className="works-header">
-          <h2 className="title">How WealthGo works</h2>
-          <p className="description">
-            Cribstock lets you earn rent from tenants in Lagos even if you don’t
-            own a house. If you co-own a property by buying its stock, you’ll
-            earn a share of the net monthly rental income which varies per
-            month.
-          </p>
+          <h2 className="title">Get started in a few steps</h2>
+          {/* <p className="description">
+          Get started in a few steps
+          </p> */}
         </div>
         <div className="works-steps">
           <div className="works-step">
@@ -24,7 +21,7 @@ const Works = () => {
               <img src={create} alt="sign up" className="work-img" />
             </div>
             <div className="work-text">
-              <p className="work-desc">Create a free account</p>
+              <p className="work-desc">Create an account</p>
             </div>
           </div>
           <div className="works-step">

@@ -13,7 +13,7 @@ const News = () => {
             scrolling="no"
             allowtransparency="true"
             frameborder="0"
-            src="https://cryptopanic.com/widgets/news/?bg_color=FFFFFF&amp;font_family=sans&amp;header_bg_color=165e3b&amp;header_text_color=fff&amp;link_color=165E3B&amp;news_feed=recent&amp;posts_limit=7&amp;text_color=333333&amp;title=Crypto%20News"
+            src="https://cryptopanic.com/widgets/news/?bg_color=FFFFFF&amp;font_family=sans&amp;header_bg_color=0000FF&amp;header_text_color=fff&amp;link_color=0000FF&amp;news_feed=recent&amp;posts_limit=7&amp;text_color=333333&amp;title=Crypto%20News"
             height="450px"
           ></iframe>
         </div>

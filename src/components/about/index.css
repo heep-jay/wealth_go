@@ -44,7 +44,7 @@
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 15px;
-  background: #5ba601;
+  background: #0000FF;
   color: #fff;
   font-size: 17px;
   color: #fff;
@@ -69,4 +69,12 @@
   .whychoose-container {
     flex-direction: column-reverse;
   }
+}
+
+.subtitle{
+  font-family: "Lato";
+}
+
+.description{
+  font-family: "Lato";
 }

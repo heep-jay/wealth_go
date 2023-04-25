@@ -15,9 +15,8 @@ const HomeCarousel = () => {
             Investment in <span className="hero-color">Agriculture</span>
           </h3>
           <p className="hero-description">
-            The Only Crypto Solution You'll Ever Need
-            Join millions of people globally, to invest, manage 
-            and grow cryptocurrencies the secure and seamless way. Sign up and start growing your profit today!.
+          Join millions of people globally, to invest, manage and grow 
+          cryptocurrencies the secure and seamless way. Sign up and start growing your profit today!
           </p>
           <button className="hero-btn">Get Started</button>
         </Carousel.Caption>
@@ -30,8 +29,9 @@ const HomeCarousel = () => {
             Investment in <span className="hero-color">Gold Mining </span>
           </h3>
           <p className="hero-description">
-            Wealth Go is the easiest way to Invest, Manage and Grow your capital
-            in agriculture. Sign up and start growing your profit today!.
+          We like to think of ourselves as superheroes here at WealthGo. We aren't in the 
+          business of doing things just because they are routine. We are in the business of 
+          creating solutions that are simply mind-blowing. 
           </p>
           <button className="hero-btn">Get Started</button>
         </Carousel.Caption>
@@ -48,8 +48,9 @@ const HomeCarousel = () => {
             Investment in <span className="hero-color">Real Estate</span>
           </h3>
           <p className="hero-description">
-            Wealth Go is the easiest way to Invest, Manage and Grow your capital
-            in agriculture. Sign up and start growing your profit today!.
+          WealthGo trade is aimed at providing investors a unique, safe and secured platform for
+           investment. We have used cutting edge technologies with extensive infrastructure intented 
+           to make things more convenient.
           </p>
           <button className="hero-btn">Get Started</button>
         </Carousel.Caption>

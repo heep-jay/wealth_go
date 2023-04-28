@@ -11,7 +11,7 @@
 .hero-title {
   text-align: center;
   font-size: clamp(1.875rem, -0.625rem + 8vw, 3.875rem);
-  font-family: "Lato";
+  font-family: "Goldman";
   font-weight: 600;
   /* color: #165e3b; */
   color: white;
@@ -19,7 +19,7 @@
 .hero-description {
   text-align: center;
   color: white;
-  font-family: "Lato";
+  font-family: "Goldman";
   font-size: clamp(0.9375rem, 0.2344rem + 2.25vw, 1.5rem);
 }
 .caro-img {
@@ -29,17 +29,17 @@
 .hero-btn {
   padding: 0.8rem 2.5rem;
   border-radius: 25px;
-  background: #0000FF;
+  background: #5ba601;
   color: white;
   border: none;
-  font-family: "Lato";
+  font-family: "Goldman";
   font-size: 17px;
   cursor: pointer;
   margin-top: 1.2rem;
 }
 
 .hero-color {
-  color: #0000FF;
+  color: #5ba601;
   font-family: "Goldman", cursive;
 }
 

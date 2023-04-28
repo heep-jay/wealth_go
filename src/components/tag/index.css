@@ -28,13 +28,13 @@
 .amount {
   font-size: clamp(1.125rem, 1.0221rem + 0.8235vw, 1.8rem);
   font-weight: lighter;
-  color: #0000FF;
-  font-family: "Lato";
+  color: #5ba601;
+  font-family: "Goldman";
 }
 .ind-text {
   font-size: clamp(0.875rem, 0.8456rem + 0.2353vw, 1.125rem);
   font-weight: 100 !important;
-  font-family: "Lato";
+  font-family: "Goldman";
 }
 
 .works-header {

@@ -78,7 +78,7 @@
 .myCarousel p {
   font-weight: 100 !important;
   line-height: 29px !important;
-  color: #0000FF;
+  color: #5ba601;
   font-size: 15px;
   max-height: 67px;
 }
@@ -136,7 +136,7 @@
     padding-bottom: 12.5%;
     padding-left: 5%;
     padding-right: 5%;
-    border: 1px solid #0000FF !important;
+    border: 1px solid #5ba601 !important;
     height: 269px;
   }
 

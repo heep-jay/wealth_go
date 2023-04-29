@@ -25,7 +25,7 @@ const Plans = ({ name }) => {
               <h4 className="card_subtitle">Plan 1</h4>
               <h2 className="card_title"> 10%</h2>
             </div>
-            <img src={plan1} alt="" className="card-img" />
+            {/* <img src={plan1} alt="" className="card-img" /> */}
             <div className="card-body">
               <p className="card-text">AFTER 24 HOURS</p>
               <p className="card-text">Min : $30</p>
@@ -39,7 +39,7 @@ const Plans = ({ name }) => {
               <h4 className="card_subtitle">Plan 2</h4>
               <h2 className="card_title"> 30%</h2>
             </div>
-            <img src={plan2} alt="" className="card-img" />
+            {/* <img src={plan2} alt="" className="card-img" /> */}
             <div className="card-body">
               <p className="card-text">AFTER 24 HOURS</p>
               <p className="card-text">Min : $500</p>
@@ -53,7 +53,7 @@ const Plans = ({ name }) => {
               <h4 className="card_subtitle">Plan 3</h4>
               <h2 className="card_title"> 60%</h2>
             </div>
-            <img src={plan3} alt="" className="card-img" />
+            {/* <img src={plan3} alt="" className="card-img" /> */}
             <div className="card-body">
               <p className="card-text">AFTER 48 HOURS</p>
               <p className="card-text">Min : $1000</p>
@@ -67,7 +67,7 @@ const Plans = ({ name }) => {
               <h4 className="card_subtitle">Plan 4</h4>
               <h2 className="card_title"> 100%</h2>
             </div>
-            <img src={plan4} alt="" className="card-img" />
+            {/* <img src={plan4} alt="" className="card-img" /> */}
             <div className="card-body">
               <p className="card-text">AFTER 72 HOURS</p>
               <p className="card-text">Min : $5000</p>

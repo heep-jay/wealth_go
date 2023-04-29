@@ -44,7 +44,7 @@
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 15px;
-  background: #0000FF;
+  background: #5ba601;
   color: #fff;
   font-size: 17px;
   color: #fff;
@@ -71,9 +71,6 @@
   }
 }
 
-.subtitle{
-  font-family: "Lato";
-}
 
 .description{
   font-family: "Lato";

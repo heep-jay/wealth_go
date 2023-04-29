@@ -19,7 +19,7 @@ const About = () => {
             We provide high quality investments products
           </h2>
           <p className="description">
-            We are building the cryptoeconomy – a more fair, accessible,
+            We are building the crypto economy – a more fair, accessible,
             efficient, and transparent financial system enabled by crypto.
             We started in 2017 with the radical idea that anyone, anywhere,
             should be able to easily and securely invest in Agriculture,

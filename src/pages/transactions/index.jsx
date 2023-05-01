@@ -39,6 +39,12 @@ const Transactions = () => {
       flex: 0.3,
     },
     {
+      field: "paymentMethod",
+      headerName: "Method",
+      minWidth: 100,
+      flex: 0.3,
+    },
+    {
       field: "verification",
       headerName: "Verification",
       minWidth: 100,

@@ -11,7 +11,6 @@ import {
   ListItemIcon,
   ListItemText,
   Typography,
-  useTheme,
 } from "@mui/material";
 import PaymentsIcon from "@mui/icons-material/Payments";
 import {
@@ -19,8 +18,6 @@ import {
   SettingsOutlined,
   HomeOutlined,
   ChevronRightOutlined,
-  ShoppingCartOutlined,
-  Groups2Outlined,
   ReceiptLongOutlined,
   UpgradeOutlined,
   PublicOutlined,
@@ -39,7 +36,10 @@ const navItems = [
   //   text: "Client Facing",
   //   icon: null,
   // },
-
+  {
+    text: "Investment Plans",
+    icon: <UpgradeOutlined />,
+  },
   {
     text: "Deposits",
     icon: <PaymentsIcon />,
@@ -53,10 +53,6 @@ const navItems = [
     icon: <ReceiptLongOutlined />,
   },
 
-  {
-    text: "Plans",
-    icon: <UpgradeOutlined />,
-  },
   {
     text: "Profile",
     icon: <PersonOutlineOutlined />,
@@ -73,11 +69,9 @@ const Sidebar = ({
   const { pathname } = useLocation();
   const [active, setActive] = useState("");
   const navigate = useNavigate();
-  const theme = useTheme();
 
   useEffect(() => {
     setActive(pathname.substring(1));
-    console.log(pathname.substring(1));
   }, [pathname]);
 
   return (
@@ -188,8 +182,7 @@ const Sidebar = ({
                   fontSize="0.9rem"
                   //   sx={{ color: theme.palette.secondary[100] }}
                 >
-                  {/* {user.name} */}
-                  jubril
+                  {user.username}
                 </Typography>
                 <Typography
                   fontSize="0.8rem"

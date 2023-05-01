@@ -58,9 +58,9 @@
   margin-bottom: 3rem;
 }
 
-.withdraw-form input {
+.withdraw-form .form_input input {
   border: 0.4px solid #165e3b;
   background: none;
-  outline: none;
+  outline: 0.4px solid #165e3b;
   width: 95%;
 }

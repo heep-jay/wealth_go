@@ -1,5 +1,5 @@
 .carousel-item {
-  height: 80vh;
+  height: 75vh;
   object-fit: cover;
   background: black;
 }
@@ -29,7 +29,8 @@
 .hero-btn {
   padding: 0.8rem 2.5rem;
   border-radius: 25px;
-  background: #0000FF;
+  /* background: #0000ff; */
+  background: #5ba601;
   color: white;
   border: none;
   font-family: "Lato";
@@ -39,7 +40,8 @@
 }
 
 .hero-color {
-  color: #0000FF;
+  /* color: #0000ff; */
+  color: #5ba601;
   font-family: "Goldman", cursive;
 }
 

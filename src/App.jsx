@@ -16,6 +16,7 @@ import Usdt from "./pages/usdt";
 import Withdraw from "./pages/withdraw";
 import Plan from "./pages/plans";
 import ChangePassword from "./pages/changepassword";
+import VerifyEmail from "./components/verifyEmail";
 
 const App = () => {
   return (
@@ -28,7 +29,8 @@ const App = () => {
           </Route>
           <Route element={<AuthLayout />}>
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/register" element={<VerifyEmail />} />
+            <Route path="/register/verify" element={<Register />} />
           </Route>
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />

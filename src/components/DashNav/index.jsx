@@ -23,6 +23,9 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
+import { setLogout } from "state";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   //   const dispatch = useDispatch();
@@ -31,7 +34,8 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const isOpen = Boolean(anchorEl);
   const handleClick = (event) => setAnchorEl(event.currentTarget);
   const handleClose = () => setAnchorEl(null);
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <AppBar
       sx={{
@@ -97,12 +101,12 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                   fontSize="0.85rem"
                   sx={{ color: "#5ba601" }}
                 >
-                  Test Test
+                  {user.fullName}
                 </Typography>
-                <Typography fontSize="0.75rem" sx={{ color: "#5ba601" }}>
-                  {/* {user.occupation} */}
+                {/* <Typography fontSize="0.75rem" sx={{ color: "#5ba601" }}>
+                 
                   banker
-                </Typography>
+                </Typography> */}
               </Box>
               <ArrowDropDownOutlined
                 sx={{ color: "#5ba601", fontSize: "25px" }}
@@ -117,7 +121,14 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 horizontal: "center",
               }}
             >
-              <MenuItem onClick={handleClose}>Log out</MenuItem>
+              <MenuItem
+                onClick={() => {
+                  dispatch(setLogout());
+                  navigate("/login");
+                }}
+              >
+                Log out
+              </MenuItem>
             </Menu>
           </FlexBetween>
         </FlexBetween>

@@ -28,7 +28,7 @@
 }
 .reasons-card {
   width: 300px;
-  height: 250px;
+  height: 280px;
   padding: 1rem;
   border-radius: 12px;
   display: flex;
@@ -46,14 +46,15 @@
   font-size: clamp(1.125rem, 1.0809rem + 0.3529vw, 1.5rem);
   font-weight: 600;
   font-family: "Lato";
-  color: #0000FF;
+  /* color: #0000FF; */
+  color: #165e3b;
 }
 .rs-desc {
-  font-size: clamp(0.8125rem, 0.7978rem + 0.1176vw, 0.9375rem);
+  font-size: clamp(0.7125rem, 0.7978rem + 0.1176vw, 0.8375rem);
   font-weight: 200;
   font-family: "Lato";
   color: #222;
 }
-.title{
+.title {
   font-family: "Lato";
 }

@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../../components/header";
-
 import "./index.css";
 import {
   AccountBalanceWallet,
@@ -9,8 +7,15 @@ import {
   AddCardOutlined,
 } from "@mui/icons-material";
 import FlexBetween from "../../components/FlexBetween";
-import { Box } from "@mui/material";
+import { useSelector } from "react-redux";
+import { useGetDepositsQuery, useGetWithdrawalsQuery } from "state/api";
 const Dashboard = () => {
+  const id = useSelector((state) => state.global.user?._id);
+  const { data, isLoading } = useGetDepositsQuery(id);
+  console.log(data);
+  // const {
+  //   data: { withTotal },
+  // } = useGetWithdrawalsQuery(id);
   return (
     <div className="dashboard">
       <div className="dashboard-container">
@@ -42,7 +47,8 @@ const Dashboard = () => {
             </FlexBetween>
 
             <div className="card-mid-left">
-              <p className="title">$16,900,000</p>
+              <p className="title">$16,040</p>
+              {/* {data.sumTrans} */}
             </div>
           </div>
           <div className="dashboard-top-card">
@@ -56,7 +62,7 @@ const Dashboard = () => {
               <p className="cards-text">Total Withdrawals</p>
             </FlexBetween>
             <div className="card-mid-left">
-              <p className="title">$16,900,000</p>
+              <p className="title">2341617</p>
             </div>
           </div>
         </div>
@@ -125,7 +131,7 @@ const Dashboard = () => {
         <div className="referral">
           <h5 className="referral-title">Your Referrals Links</h5>
           <div className="referral-links">
-            <input type="text" value="ABCDGRT" />
+            <input type="text" value="ABCDGRT" onChange={() => {}} />
           </div>
         </div>
       </div>

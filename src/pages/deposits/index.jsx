@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import Header from "../../components/header";
 import usdt from "../../assets/usdt.png";
@@ -25,6 +25,14 @@ const Deposits = () => {
   const [amount, setAmount] = useState(500);
   const { data, isLoading } = useGetDepositsQuery(id !== undefined ? id : "");
   const navigate = useNavigate();
+  const [deposit, setDeposit] = useState([]);
+
+  useEffect(() => {
+    if (!isLoading || data) {
+      setDeposit(data.deposits);
+    }
+  }, [data, isLoading]);
+
   console.log(data);
   const handleOpen = () => {
     // localStorage.setItem("currency", currency);
@@ -216,7 +224,7 @@ const Deposits = () => {
         <DataGrid
           loading={isLoading || !data}
           getRowId={(row) => row._id}
-          rows={data.deposits || []}
+          rows={deposit || []}
           columns={columns}
         />
       </Box>

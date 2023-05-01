@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import { DataGrid } from "@mui/x-data-grid";
 import { useSelector } from "react-redux";
@@ -10,7 +10,13 @@ const Withdraw = () => {
   const id = useSelector((state) => state.global.user?._id);
 
   const { data, isLoading } = useGetWithdrawalsQuery(id);
-  console.log(data);
+  const [withdraw, setWithdraw] = useState([]);
+
+  useEffect(() => {
+    if (!isLoading || data) {
+      setWithdraw(data.withdrawals);
+    }
+  }, [data, isLoading]);
 
   const columns = [
     {
@@ -179,7 +185,7 @@ const Withdraw = () => {
           loading={isLoading || !data}
           getRowId={(row) => row._id}
           // rows={data.withdrawals || []}
-          rows={data.withdrawals || []}
+          rows={withdraw || []}
           columns={columns}
         />
       </Box>

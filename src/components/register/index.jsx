@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.css";
 import { Link } from "react-router-dom";
 import { TextField, FormControlLabel, Checkbox } from "@mui/material";
@@ -8,6 +8,7 @@ import { useVerifyUserMutation } from "state/api";
 import { Formik } from "formik";
 import * as yup from "yup";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -35,6 +36,23 @@ const Register = () => {
   const [verifyUser] = useVerifyUserMutation();
   const navigate = useNavigate();
   const [terms, setTerms] = useState(false);
+
+  const handleToast = () => {
+    toast.success("Otp sent to email", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
+  useEffect(() => {
+    handleToast();
+  }, []);
 
   const handleFormSubmit = async (values, onSubmitProps) => {
     try {
@@ -203,6 +221,19 @@ const Register = () => {
           </form>
         )}
       </Formik>
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };

@@ -3,15 +3,22 @@ import "./index.css";
 import usdt from "../../assets/qr.png";
 import btc from "../../assets/btcqr.png";
 import eth from "../../assets/ethqr.png";
+import { useSelector } from "react-redux";
+import { useDepositMutation } from "state/api";
+import { useNavigate } from "react-router-dom";
 
 const Usdt = () => {
   const [amount, setAmount] = useState(0);
   const [currency, setCurrency] = useState("");
   const [qr, setQr] = useState(null);
+  const id = useSelector((state) => state.global.user?._id);
+  const [deposit] = useDepositMutation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     let amount = localStorage.getItem("amount");
     let currency = localStorage.getItem("currency");
+
     amount = JSON.parse(amount);
     setAmount(amount);
     setCurrency(currency);
@@ -25,6 +32,40 @@ const Usdt = () => {
       setQr(null);
     }
   }, []);
+
+  const sendPayment = async () => {
+    const formData = new FormData();
+    formData.append("amount", localStorage.getItem("amount"));
+
+    console.log(formData);
+    const response = await fetch(
+      `http://localhost:5000/transactions/${id}/deposit`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          amount: amount,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      }
+    );
+
+    const data = await response.json();
+    if (data) {
+      navigate("/deposits");
+      localStorage.removeItem("amount");
+    }
+    console.log(data);
+    // try {
+    //   await deposit(id, 500)
+    //     .unwrap()
+    //     .then((fulfilled) => {
+    //       console.log({ fulfilled, amount });
+    //       navigate("/deposits");
+    //     });
+    // } catch (error) {}
+  };
 
   return (
     <div className="usdt">
@@ -78,6 +119,9 @@ const Usdt = () => {
             <p className="curr">5000.00000000 usdt</p>
           </div>
         </div>
+      </div>
+      <div className="usdt-paybtn">
+        <button onClick={sendPayment}>Sent Payment</button>
       </div>
     </div>
   );

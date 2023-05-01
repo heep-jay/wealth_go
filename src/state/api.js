@@ -30,6 +30,7 @@ export const api = createApi({
     "Register",
     "Verify",
     "Login",
+    "MakeDeposit",
   ],
   endpoints: (build) => ({
     getUser: build.query({
@@ -113,6 +114,17 @@ export const api = createApi({
         }
       ) {},
     }),
+    deposit: build.mutation({
+      query: (id, amount) => ({
+        url: `transactions/${id}/deposit`,
+        method: "POST",
+        body: amount,
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      }),
+      invalidatesTags: ["MakeDeposit"],
+    }),
   }),
 });
 
@@ -125,4 +137,5 @@ export const {
   useGetTransactionsQuery,
   useGetDepositsQuery,
   useGetWithdrawalsQuery,
+  useDepositMutation,
 } = api;

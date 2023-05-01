@@ -91,8 +91,8 @@ const Deposits = () => {
       <div className="deposits-container">
         <div className="deposits-cards">
           <div className="deposit-card">
-            <img src={usdt} alt="usdt" />
-            <h5>PAY USDT</h5>
+            <img src={btc} alt="usdt" />
+            <h5>Bitcoin (BTC)</h5>
             <div className="deposit-btn">
               <button
                 onClick={() => {
@@ -106,7 +106,11 @@ const Deposits = () => {
           </div>
           <div className="deposit-card">
             <img src={eth} alt="usdt" />
+<<<<<<< HEAD
             <h5>PAY ETH</h5>
+=======
+            <h5>Ethereum (ETH)</h5>
+>>>>>>> 92cb68580d55dd772fb849d614d2e202085664c0
             <div className="deposit-btn">
               <button
                 onClick={() => {
@@ -119,8 +123,13 @@ const Deposits = () => {
             </div>
           </div>
           <div className="deposit-card">
+<<<<<<< HEAD
             <img src={btc} alt="usdt" />
             <h5>PAY BTC</h5>
+=======
+            <img src={usdt } alt="usdt" />
+            <h5>USDT - Tron (USDT)</h5>
+>>>>>>> 92cb68580d55dd772fb849d614d2e202085664c0
             <div className="deposit-btn">
               <button
                 onClick={() => {

@@ -45,16 +45,26 @@
 .rs-title {
   font-size: clamp(1.125rem, 1.0809rem + 0.3529vw, 1.5rem);
   font-weight: 600;
+<<<<<<< HEAD
   font-family: "Lato";
   /* color: #0000FF; */
   color: #165e3b;
+=======
+  font-family: "Goldman";
+  color: #5ba601;
+>>>>>>> 92cb68580d55dd772fb849d614d2e202085664c0
 }
 .rs-desc {
   font-size: clamp(0.7125rem, 0.7978rem + 0.1176vw, 0.8375rem);
   font-weight: 200;
-  font-family: "Lato";
+  font-family: "Goldman";
   color: #222;
 }
+<<<<<<< HEAD
 .title {
   font-family: "Lato";
+=======
+.title{
+  font-family: "Goldman";
+>>>>>>> 92cb68580d55dd772fb849d614d2e202085664c0
 }

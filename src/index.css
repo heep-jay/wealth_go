@@ -19,17 +19,26 @@ ul {
 
 .subtitle {
   font-size: clamp(0.9375rem, 0.5469rem + 1.25vw, 1.45rem);
+<<<<<<< HEAD
   /* color: #0000ff; */
   color: #5ba601;
+=======
+  color: black;
+>>>>>>> 92cb68580d55dd772fb849d614d2e202085664c0
   font-family: "Goldman", cursive;
   font-style: italic;
 }
 
 .title {
   font-size: clamp(1.5rem, 0.5625rem + 3vw, 2.25rem);
+<<<<<<< HEAD
   font-family: "Goldman", cursive;
   /* color: #0000ff; */
   color: #5ba601;
+=======
+  font-family: "Goldman";
+  color: black;
+>>>>>>> 92cb68580d55dd772fb849d614d2e202085664c0
   font-weight: 700;
 }
 .small-title {
@@ -41,8 +50,12 @@ ul {
 
 .description {
   font-weight: 100;
+<<<<<<< HEAD
   /* color: #0000ff; */
   color: #165e3b;
+=======
+  color: black;
+>>>>>>> 92cb68580d55dd772fb849d614d2e202085664c0
   font-size: clamp(0.875rem, 0.5625rem + 1vw, 1rem);
 }
 #root {

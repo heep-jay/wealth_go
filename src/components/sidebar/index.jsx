@@ -13,6 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import PaymentsIcon from "@mui/icons-material/Payments";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import {
   ChevronLeft,
   SettingsOutlined,
@@ -32,12 +33,9 @@ const navItems = [
     text: "Dashboard",
     icon: <HomeOutlined />,
   },
-  // {
-  //   text: "Client Facing",
-  //   icon: null,
-  // },
+
   {
-    text: "Investment Plans",
+    text: "Investment-plans",
     icon: <UpgradeOutlined />,
   },
   {
@@ -46,7 +44,7 @@ const navItems = [
   },
   {
     text: "Withdraw",
-    icon: <PublicOutlined />,
+    icon: <AccountBalanceIcon />,
   },
   {
     text: "Transactions",

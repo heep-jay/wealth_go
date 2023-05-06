@@ -6,6 +6,7 @@ import eth from "../../assets/ethqr.png";
 import { useSelector } from "react-redux";
 import { useDepositMutation } from "state/api";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const Usdt = () => {
   const [amount, setAmount] = useState(0);
@@ -44,6 +45,7 @@ const Usdt = () => {
         method: "POST",
         body: JSON.stringify({
           amount: amount,
+          paymentMethod: currency,
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -52,11 +54,24 @@ const Usdt = () => {
     );
 
     const data = await response.json();
+
+    setTimeout(() => {
+      toast.success(`deposit of ${amount} has been made`, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }, 3000);
+
     if (data) {
       navigate("/deposits");
       localStorage.removeItem("amount");
     }
-    console.log(data);
     // try {
     //   await deposit(id, 500)
     //     .unwrap()
@@ -123,6 +138,19 @@ const Usdt = () => {
       <div className="usdt-paybtn">
         <button onClick={sendPayment}>Sent Payment</button>
       </div>
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };

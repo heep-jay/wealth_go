@@ -19,6 +19,7 @@ import Withdraw from "./pages/withdraw";
 import Plan from "./pages/plans";
 import ChangePassword from "./pages/changepassword";
 import VerifyEmail from "./components/verifyEmail";
+import InvestmentPlans from "pages/investmentlogs";
 
 const App = () => {
   return (
@@ -44,7 +45,9 @@ const App = () => {
               path="/profile/changepassword"
               element={<ChangePassword />}
             />
-            <Route path="/plans" element={<Plan />} />
+            <Route path="/investment-plans" element={<Plan />} />
+
+            <Route path="/investment-logs" element={<InvestmentPlans />} />
 
             <Route path="/transactions" element={<Transactions />} />
           </Route>

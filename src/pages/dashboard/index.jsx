@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import {
   AccountBalanceWallet,
@@ -8,10 +8,43 @@ import {
 } from "@mui/icons-material";
 import FlexBetween from "../../components/FlexBetween";
 import { useSelector } from "react-redux";
-import { useGetDepositsQuery, useGetWithdrawalsQuery } from "state/api";
+import {
+  useGetDepositsQuery,
+  useGetUserDashboardQuery,
+  useGetWithdrawalsQuery,
+} from "state/api";
+import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
   const id = useSelector((state) => state.global.user?._id);
-  const { data, isLoading } = useGetDepositsQuery(id);
+  const navigate = useNavigate();
+
+  const { data, isLoading } = useGetUserDashboardQuery(id);
+  const [currentBalance, setCurrentBalance] = useState();
+  const [pendingBalance, setPendingBalance] = useState();
+  const [totalDeposits, setTotalDeposits] = useState();
+  const [pendingDeposits, setPendingDeposits] = useState();
+  const [totalWithdrawals, setTotalWithdrawals] = useState();
+  const [pendingWithdrawals, setPendingWithdrawals] = useState();
+  const [totalEarnings, setTotalEarnings] = useState();
+  const [currPlanAmount, setCurrPlanAmount] = useState();
+  const [activeInvestments, setActiveInvestments] = useState();
+  const [plan, setPlan] = useState();
+
+  useEffect(() => {
+    if (!isLoading || data) {
+      setCurrentBalance(data.currentBalance);
+      setPendingBalance(data.pendingBalance);
+      setTotalDeposits(data.totalDeposits);
+      setPendingDeposits(data.pendingDeposits);
+      setTotalWithdrawals(data.totalWithdrawals);
+      setPendingWithdrawals(data.pendingWithdrawals);
+      setTotalEarnings(data.totalEarnings);
+      setCurrPlanAmount(data.currPlanAmount);
+      setActiveInvestments(data.activeInvestments);
+      setPlan(data.plan);
+    }
+  }, [isLoading, data]);
+
   console.log(data);
   // const {
   //   data: { withTotal },
@@ -31,8 +64,22 @@ const Dashboard = () => {
               <p className="cards-text">Account Balance</p>
             </FlexBetween>
             <div className="card-mid-left">
-              <p className="title">$16,900,000</p>
+              <p className="title">
+                {new Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                }).format(currentBalance)}
+              </p>
             </div>
+            <p className="p-dep">
+              Pending Balance:{" "}
+              <span>
+                {new Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                }).format(pendingBalance)}
+              </span>
+            </p>
           </div>
 
           <div className="dashboard-top-card">
@@ -47,9 +94,22 @@ const Dashboard = () => {
             </FlexBetween>
 
             <div className="card-mid-left">
-              <p className="title">$16,040</p>
-              {/* {data.sumTrans} */}
+              <p className="title">
+                {new Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                }).format(totalDeposits)}
+              </p>
             </div>
+            <p className="p-dep">
+              Pending Deposit:{" "}
+              <span>
+                {new Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                }).format(pendingDeposits)}
+              </span>
+            </p>
           </div>
           <div className="dashboard-top-card">
             <FlexBetween>
@@ -62,8 +122,22 @@ const Dashboard = () => {
               <p className="cards-text">Total Withdrawals</p>
             </FlexBetween>
             <div className="card-mid-left">
-              <p className="title">2341617</p>
+              <p className="title">
+                {new Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                }).format(totalWithdrawals)}
+              </p>
             </div>
+            <p className="p-dep">
+              Pending Withdrawals:{" "}
+              <span>
+                {new Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                }).format(pendingWithdrawals)}
+              </span>
+            </p>
           </div>
         </div>
         <div className="dashboard-mid-cards">
@@ -71,7 +145,13 @@ const Dashboard = () => {
             <div className="arrow-right"></div>
             <div className="wallet">
               <div className="mid-text">
-                <h6 className="mid-title">$25,000</h6>
+                <h6 className="mid-title">
+                  {" "}
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                  }).format(totalEarnings)}
+                </h6>
                 <p className="s">Total Earnings</p>
               </div>
               <div className="">
@@ -79,11 +159,19 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="dashboard-mid-card">
+          <div
+            className="dashboard-mid-card"
+            onClick={() => navigate("/investment-logs")}
+          >
             <div className="arrow-right"></div>
             <div className="wallet">
               <div className="mid-text">
-                <h6 className="mid-title">$25,000</h6>
+                <h6 className="mid-title">
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                  }).format(currPlanAmount)}
+                </h6>
                 <p className="s">Current Investment</p>
               </div>
               <div className="">
@@ -95,7 +183,7 @@ const Dashboard = () => {
             <div className="arrow-right"></div>
             <div className="wallet">
               <div className="mid-text">
-                <h6 className="mid-title">Plan 4</h6>
+                <h6 className="mid-title">{plan}</h6>
                 <p className="s">Current Plan</p>
               </div>
               <div className="">
@@ -108,8 +196,14 @@ const Dashboard = () => {
           <div className="dashboard-mid-card">
             <div className="arrow-right"></div>
             <div className="mid-text">
-              <h6 className="mid-title">$25,000</h6>
-              <p className="s">Pending Investment</p>
+              <h6 className="mid-title">
+                {" "}
+                {new Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                }).format(activeInvestments)}
+              </h6>
+              <p className="s">Total Running Investment</p>
             </div>
           </div>
           <div className="dashboard-mid-card">

@@ -2,21 +2,198 @@ import React, { useEffect, useState } from "react";
 import "./index.css";
 import { DataGrid } from "@mui/x-data-grid";
 import { useSelector } from "react-redux";
-import { useGetWithdrawalsQuery } from "state/api";
+import { useGetUserBalanceQuery, useGetWithdrawalsQuery } from "state/api";
 import { Box } from "@mui/material";
+import { Formik } from "formik";
+import * as yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
+import Header from "components/header";
+
+const loginSchema = yup.object().shape({
+  amount: yup.string().required("required"),
+  fwa: yup.string().required("required"),
+  walletAddress: yup.string().required("required"),
+});
+
+const initialValuesBtc = {
+  amount: "",
+  fwa: "",
+  walletAddress: "",
+};
 
 const Withdraw = () => {
   const [form, setForm] = useState("");
   const id = useSelector((state) => state.global.user?._id);
 
   const { data, isLoading } = useGetWithdrawalsQuery(id);
+  const { data: userGetBalance } = useGetUserBalanceQuery(id);
+  const [balance, setBalance] = useState();
   const [withdraw, setWithdraw] = useState([]);
+  const [amount, setAmount] = useState("");
+  const [fwa, setFwa] = useState("");
+  const [walletAddress, setWalletAddress] = useState("");
 
   useEffect(() => {
     if (!isLoading || data) {
       setWithdraw(data.withdrawals);
+      setBalance(userGetBalance.currentBalance);
     }
-  }, [data, isLoading]);
+  }, [data, isLoading, userGetBalance]);
+
+  const handleBtcSubmit = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:5000/transactions/${id}/withdrawals`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            amount: fwa,
+            paymentMethod: "BTC",
+            walletAddress: walletAddress,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      );
+      const data = await response.json();
+      setAmount("");
+      setFwa("");
+      setWalletAddress("");
+
+      toast.success(`withdrawal of ${fwa} has been sent`, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+
+      console.log(data);
+    } catch (error) {
+      if (error) {
+        toast.error(error.message, {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }
+    }
+  };
+
+  const handleUsdtSubmit = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:5000/transactions/${id}/withdrawals`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            amount: fwa,
+            paymentMethod: "USDT",
+            walletAddress: walletAddress,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      );
+      const data = await response.json();
+      setAmount("");
+      setFwa("");
+      setWalletAddress("");
+      toast.success(`withdrawal of ${fwa} has been sent`, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+
+      console.log(data);
+    } catch (error) {
+      if (error) {
+        toast.error(error.message, {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }
+    }
+  };
+
+  const handleEthSubmit = async () => {
+    try {
+      if (fwa > balance) {
+        toast.error("withdrawal amount greater than current balance", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      } else {
+        const response = await fetch(
+          `http://localhost:5000/transactions/${id}/withdrawals`,
+          {
+            method: "POST",
+            body: JSON.stringify({
+              amount: fwa,
+              paymentMethod: "ETH",
+              walletAddress: walletAddress,
+            }),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+          }
+        );
+        const data = await response.json();
+        toast.success(`withdrawal of ${fwa} has been sent`, {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }
+
+      console.log(data);
+    } catch (error) {
+      if (error) {
+        toast.error(error.message, {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }
+    }
+  };
 
   const columns = [
     {
@@ -64,11 +241,25 @@ const Withdraw = () => {
       flex: 0.5,
     },
   ];
+
+  const calculateFwa = (amount) => {
+    let newamount = amount;
+    newamount = amount - amount * 0.05;
+    setFwa(newamount.toFixed(2));
+    // return newamount;
+  };
   return (
     <div className="withdraw">
       <div className="withdraw-container">
         <div className="withdraw-left">
-          <h2 className="small-title"> Current Balance : $35,000</h2>
+          <h2 className="small-title">
+            {" "}
+            Current Balance :{" "}
+            {new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+            }).format(balance)}
+          </h2>
 
           <div className="withdrawal-form">
             <div className="withdraw-select">
@@ -89,62 +280,123 @@ const Withdraw = () => {
             </div>
 
             {form === "btc" ? (
-              <form className="withdraw-form">
+              <div className="withdraw-form">
                 <div className="form_input">
                   <label htmlFor="">Withdraw Amount</label>
-                  <input type="number" />
+                  <input
+                    type="number"
+                    name="amount"
+                    value={amount}
+                    onChange={(e) => {
+                      setAmount(e.target.value);
+                      calculateFwa(e.target.value);
+                    }}
+                  />
                 </div>
                 <div className="form_input">
                   <label htmlFor=""> Withdraw Charge</label>
-                  <input type="number" value={"0.00"} disabled />
+                  <input type="text" value={"5.0%"} disabled />
                 </div>
                 <div className="form_input">
                   <label htmlFor="">Final Withdraw Amount</label>
-                  <input type="number" />
+                  <input type="number" name="fwa" disabled value={fwa} />
                 </div>
                 <div className="form_input">
                   <label htmlFor=""> Account Email/ BTC Wallet Address</label>
-                  <input type="text" />
+                  <input
+                    type="text"
+                    value={walletAddress}
+                    onChange={(e) => {
+                      setWalletAddress(e.target.value);
+                    }}
+                    name="walletAddress"
+                  />
                 </div>
-              </form>
+                <div className="btc-btn">
+                  <button
+                    // type="submit"
+                    className="btc"
+                    onClick={handleBtcSubmit}
+                  >
+                    Withdraw
+                  </button>
+                </div>
+              </div>
             ) : form === "usdt" ? (
-              <form className="withdraw-form">
+              <div className="withdraw-form">
                 <div className="form_input">
                   <label htmlFor="">Withdraw Amount</label>
-                  <input type="number" />
+                  <input
+                    type="number"
+                    value={amount}
+                    name="amount"
+                    onChange={(e) => {
+                      setAmount(e.target.value);
+                      calculateFwa(e.target.value);
+                    }}
+                  />
                 </div>
                 <div className="form_input">
                   <label htmlFor=""> Withdraw Charge</label>
-                  <input type="number" value={"0.00"} disabled />
+                  <input type="text" value={"5.0%"} disabled />
                 </div>
                 <div className="form_input">
-                  <label htmlFor="">Final Withdraw Amount</label>
-                  <input type="number" />
+                  <label htmlFor="fwa">Final Withdraw Amount</label>
+                  <input type="number" name="fwa" disabled value={fwa} />
                 </div>
                 <div className="form_input">
                   <label htmlFor=""> Account Email/ USDT Wallet Address</label>
-                  <input type="text" />
+                  <input
+                    type="text"
+                    value={walletAddress}
+                    onChange={(e) => {
+                      setWalletAddress(e.target.value);
+                    }}
+                  />
                 </div>
-              </form>
+                <div className="btc-btn">
+                  <button className="btc" onClick={handleUsdtSubmit}>
+                    Withdraw
+                  </button>
+                </div>
+              </div>
             ) : form === "eth" ? (
-              <form className="withdraw-form">
+              <div className="withdraw-form">
                 <div className="form_input">
                   <label htmlFor="">Withdraw Amount</label>
-                  <input type="number" />
+                  <input
+                    type="number"
+                    name="amount"
+                    onChange={(e) => {
+                      setAmount(e.target.value);
+                      calculateFwa(e.target.value);
+                    }}
+                  />
                 </div>
                 <div className="form_input">
                   <label htmlFor=""> Withdraw Charge</label>
-                  <input type="number" value={"0.00"} disabled />
+                  <input type="text" value={"4.0%"} disabled />
                 </div>
                 <div className="form_input">
-                  <label htmlFor="">Final Withdraw Amount</label>
-                  <input type="number" />
+                  <label htmlFor="fwa">Final Withdraw Amount</label>
+                  <input type="number" name="fwa" disabled value={fwa} />
                 </div>
                 <div className="form_input">
                   <label htmlFor=""> Account Email/ ETH Wallet Address</label>
-                  <input type="text" />
+                  <input
+                    type="text"
+                    value={walletAddress}
+                    onChange={(e) => {
+                      setWalletAddress(e.target.value);
+                    }}
+                  />
                 </div>
-              </form>
+                <div className="btc-btn">
+                  <button className="btc" onClick={handleEthSubmit}>
+                    Withdraw
+                  </button>
+                </div>
+              </div>
             ) : null}
           </div>
         </div>
@@ -158,10 +410,13 @@ const Withdraw = () => {
       </div>
       <Box
         mt="40px"
-        height="55vh"
+        height="65vh"
         // maxWidth={"1200px"}
         // m="0 auto"
         width="98%"
+        display="flex"
+        flexDirection="column"
+        gap="2rem"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -187,6 +442,10 @@ const Withdraw = () => {
           },
         }}
       >
+        <Header
+          dashtitle="Withdrawal Logs"
+          dashsub="List of withdrawal transactions"
+        />
         <DataGrid
           loading={isLoading || !data}
           getRowId={(row) => row._id}
@@ -195,6 +454,18 @@ const Withdraw = () => {
           columns={columns}
         />
       </Box>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };

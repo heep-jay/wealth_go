@@ -24,7 +24,10 @@ export const api = createApi({
   tagTypes: [
     "User",
     "Users",
+    "UserDashboard",
     "Transactions",
+    "Investments",
+    "Balance",
     "Deposits",
     "Withdrawals",
     "Register",
@@ -39,6 +42,12 @@ export const api = createApi({
       }),
       providesTags: ["User"],
     }),
+    getUserDashboard: build.query({
+      query: (id) => ({
+        url: `users/dashboard/${id}`,
+      }),
+      providesTags: ["UserDashboard"],
+    }),
     getUsers: build.query({
       query: (id) => ({
         url: "users/all",
@@ -51,6 +60,18 @@ export const api = createApi({
         url: `transactions/${id}`,
       }),
       providesTags: ["Transactions"],
+    }),
+    getUserInvestments: build.query({
+      query: (id) => ({
+        url: `investments/${id}`,
+      }),
+      providesTags: ["Investments"],
+    }),
+    getUserBalance: build.query({
+      query: (id) => ({
+        url: `users/balance/${id}`,
+      }),
+      providesTags: ["Balance"],
     }),
     getDeposits: build.query({
       query: (id) => ({
@@ -131,6 +152,9 @@ export const api = createApi({
 export const {
   useGetUserQuery,
   useGetUsersQuery,
+  useGetUserDashboardQuery,
+  useGetUserInvestmentsQuery,
+  useGetUserBalanceQuery,
   useRegisterUserMutation,
   useVerifyUserMutation,
   useLoginUserMutation,

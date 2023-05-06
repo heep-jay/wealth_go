@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { useGetDepositsQuery } from "state/api";
 import { useSelector } from "react-redux";
 import { DataGrid } from "@mui/x-data-grid";
+
 const Deposits = () => {
   const id = useSelector((state) => state.global.user?._id);
   console.log(id);
@@ -41,6 +42,7 @@ const Deposits = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
   const style = {
     position: "absolute",
     top: "50%",
@@ -105,8 +107,8 @@ const Deposits = () => {
       <div className="deposits-container">
         <div className="deposits-cards">
           <div className="deposit-card">
-            <img src={btc} alt="usdt" />
-            <h5>Bitcoin (BTC)</h5>
+            <img src={usdt} alt="usdt" />
+            <h5>Tether (USDT)</h5>
             <div className="deposit-btn">
               <button
                 onClick={() => {
@@ -120,7 +122,7 @@ const Deposits = () => {
           </div>
           <div className="deposit-card">
             <img src={eth} alt="usdt" />
-            <h5>PAY ETH</h5>
+
             <h5>Ethereum (ETH)</h5>
             <div className="deposit-btn">
               <button
@@ -135,9 +137,8 @@ const Deposits = () => {
           </div>
           <div className="deposit-card">
             <img src={btc} alt="usdt" />
-            <h5>PAY BTC</h5>
-            <img src={usdt} alt="usdt" />
-            <h5>USDT - Tron (USDT)</h5>
+            <h5>Bitcoin (BTC)</h5>
+
             <div className="deposit-btn">
               <button
                 onClick={() => {

@@ -40,7 +40,7 @@ const Usdt = () => {
 
     console.log(formData);
     const response = await fetch(
-      `http://localhost:5000/transactions/${id}/deposit`,
+      `https://wealthgo.onrender.com/transactions/${id}/deposit`,
       {
         method: "POST",
         body: JSON.stringify({

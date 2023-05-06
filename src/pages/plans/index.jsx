@@ -77,18 +77,21 @@ const Plan = () => {
       handleClose();
       setAmount("");
     } else {
-      const response = await fetch(`http://localhost:5000/investments`, {
-        method: "POST",
-        body: JSON.stringify({
-          customerId: id,
-          planName: "plan1",
-          investAmount: amo,
-          percent: 0.1,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      });
+      const response = await fetch(
+        `https://wealthgo.onrender.com/investments`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            customerId: id,
+            planName: "plan1",
+            investAmount: amo,
+            percent: 0.1,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      );
 
       const data = await response.json();
 
@@ -125,18 +128,21 @@ const Plan = () => {
       handleClose();
       setAmount("");
     } else {
-      const response = await fetch(`http://localhost:5000/investments`, {
-        method: "POST",
-        body: JSON.stringify({
-          customerId: id,
-          planName: "plan2",
-          investAmount: amo,
-          percent: 0.3,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      });
+      const response = await fetch(
+        `https://wealthgo.onrender.com/investments`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            customerId: id,
+            planName: "plan2",
+            investAmount: amo,
+            percent: 0.3,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      );
 
       const data = await response.json();
 
@@ -172,18 +178,21 @@ const Plan = () => {
       handleClose();
       setAmount("");
     } else {
-      const response = await fetch(`http://localhost:5000/investments`, {
-        method: "POST",
-        body: JSON.stringify({
-          customerId: id,
-          planName: "plan1",
-          investAmount: amo,
-          percent: 0.6,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      });
+      const response = await fetch(
+        `https://wealthgo.onrender.com/investments`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            customerId: id,
+            planName: "plan1",
+            investAmount: amo,
+            percent: 0.6,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      );
 
       const data = await response.json();
 
@@ -219,18 +228,21 @@ const Plan = () => {
       handleClose();
       setAmount("");
     } else {
-      const response = await fetch(`http://localhost:5000/investments`, {
-        method: "POST",
-        body: JSON.stringify({
-          customerId: id,
-          planName: "plan1",
-          investAmount: amo,
-          percent: 1.0,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      });
+      const response = await fetch(
+        `https://wealthgo.onrender.com/investments`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            customerId: id,
+            planName: "plan1",
+            investAmount: amo,
+            percent: 1.0,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      );
 
       const data = await response.json();
 

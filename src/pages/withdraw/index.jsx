@@ -25,8 +25,8 @@ const Withdraw = () => {
   const [form, setForm] = useState("");
   const id = useSelector((state) => state.global.user?._id);
 
-  const { data, isLoading } = useGetWithdrawalsQuery(id);
-  const { data: userGetBalance } = useGetUserBalanceQuery(id);
+  const { data } = useGetWithdrawalsQuery(id);
+  const { data: userGetBalance, isLoading } = useGetUserBalanceQuery(id);
   const [balance, setBalance] = useState();
   const [withdraw, setWithdraw] = useState([]);
   const [amount, setAmount] = useState("");
@@ -34,7 +34,8 @@ const Withdraw = () => {
   const [walletAddress, setWalletAddress] = useState("");
 
   useEffect(() => {
-    if (!isLoading || data) {
+    if (!isLoading || userGetBalance) {
+      console.log(userGetBalance);
       setWithdraw(data.withdrawals);
       setBalance(userGetBalance.currentBalance);
     }
@@ -43,7 +44,7 @@ const Withdraw = () => {
   const handleBtcSubmit = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/transactions/${id}/withdrawals`,
+        `https://wealthgo.onrender.com/transactions/${id}/withdrawals`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -92,7 +93,7 @@ const Withdraw = () => {
   const handleUsdtSubmit = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/transactions/${id}/withdrawals`,
+        `https://wealthgo.onrender.com/transactions/${id}/withdrawals`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -152,7 +153,7 @@ const Withdraw = () => {
         });
       } else {
         const response = await fetch(
-          `http://localhost:5000/transactions/${id}/withdrawals`,
+          `https://wealthgo.onrender.com/transactions/${id}/withdrawals`,
           {
             method: "POST",
             body: JSON.stringify({

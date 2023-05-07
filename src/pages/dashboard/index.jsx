@@ -8,11 +8,7 @@ import {
 } from "@mui/icons-material";
 import FlexBetween from "../../components/FlexBetween";
 import { useSelector } from "react-redux";
-import {
-  useGetDepositsQuery,
-  useGetUserDashboardQuery,
-  useGetWithdrawalsQuery,
-} from "state/api";
+import { useGetUserDashboardQuery } from "state/api";
 import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
   const id = useSelector((state) => state.global.user?._id);
@@ -82,7 +78,10 @@ const Dashboard = () => {
             </p>
           </div>
 
-          <div className="dashboard-top-card">
+          <div
+            className="dashboard-top-card"
+            onClick={() => navigate("/deposits")}
+          >
             <FlexBetween>
               <WalletOutlined
                 sx={{
@@ -111,7 +110,10 @@ const Dashboard = () => {
               </span>
             </p>
           </div>
-          <div className="dashboard-top-card">
+          <div
+            className="dashboard-top-card"
+            onClick={() => navigate("/withdraw")}
+          >
             <FlexBetween>
               <AddCardOutlined
                 sx={{
@@ -141,7 +143,10 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="dashboard-mid-cards">
-          <div className="dashboard-mid-card">
+          <div
+            className="dashboard-mid-card"
+            onClick={() => navigate("/investment-logs")}
+          >
             <div className="arrow-right"></div>
             <div className="wallet">
               <div className="mid-text">
@@ -179,7 +184,10 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="dashboard-mid-card">
+          <div
+            className="dashboard-mid-card"
+            onClick={() => navigate("/investment-plans")}
+          >
             <div className="arrow-right"></div>
             <div className="wallet">
               <div className="mid-text">
@@ -193,7 +201,10 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="dashboard-mid-cards">
-          <div className="dashboard-mid-card">
+          <div
+            className="dashboard-mid-card"
+            onClick={() => navigate("/investment-logs")}
+          >
             <div className="arrow-right"></div>
             <div className="mid-text">
               <h6 className="mid-title">

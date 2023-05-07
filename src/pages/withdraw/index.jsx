@@ -43,37 +43,50 @@ const Withdraw = () => {
 
   const handleBtcSubmit = async () => {
     try {
-      const response = await fetch(
-        `https://wealthgo.onrender.com/transactions/${id}/withdrawals`,
-        {
-          method: "POST",
-          body: JSON.stringify({
-            amount: fwa,
-            paymentMethod: "BTC",
-            walletAddress: walletAddress,
-          }),
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
-        }
-      );
-      const data = await response.json();
-      setAmount("");
-      setFwa("");
-      setWalletAddress("");
+      if (fwa > balance || fwa < 0) {
+        toast.error("withdrawal amount greater than current balance", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      } else {
+        const response = await fetch(
+          `https://wealthgo.onrender.com/transactions/${id}/withdrawals`,
+          {
+            method: "POST",
+            body: JSON.stringify({
+              amount: fwa,
+              paymentMethod: "BTC",
+              walletAddress: walletAddress,
+            }),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+          }
+        );
+        const data = await response.json();
+        setAmount("");
+        setFwa("");
+        setWalletAddress("");
 
-      toast.success(`withdrawal of ${fwa} has been sent`, {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+        toast.success(`withdrawal of ${fwa} has been sent`, {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
 
-      console.log(data);
+        console.log(data);
+      }
     } catch (error) {
       if (error) {
         toast.error(error.message, {
@@ -92,36 +105,49 @@ const Withdraw = () => {
 
   const handleUsdtSubmit = async () => {
     try {
-      const response = await fetch(
-        `https://wealthgo.onrender.com/transactions/${id}/withdrawals`,
-        {
-          method: "POST",
-          body: JSON.stringify({
-            amount: fwa,
-            paymentMethod: "USDT",
-            walletAddress: walletAddress,
-          }),
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
-        }
-      );
-      const data = await response.json();
-      setAmount("");
-      setFwa("");
-      setWalletAddress("");
-      toast.success(`withdrawal of ${fwa} has been sent`, {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      if (fwa > balance || fwa < 0) {
+        toast.error("withdrawal amount greater than current balance", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      } else {
+        const response = await fetch(
+          `https://wealthgo.onrender.com/transactions/${id}/withdrawals`,
+          {
+            method: "POST",
+            body: JSON.stringify({
+              amount: fwa,
+              paymentMethod: "USDT",
+              walletAddress: walletAddress,
+            }),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+          }
+        );
+        const data = await response.json();
+        setAmount("");
+        setFwa("");
+        setWalletAddress("");
+        toast.success(`withdrawal of ${fwa} has been sent`, {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
 
-      console.log(data);
+        console.log(data);
+      }
     } catch (error) {
       if (error) {
         toast.error(error.message, {
@@ -140,7 +166,7 @@ const Withdraw = () => {
 
   const handleEthSubmit = async () => {
     try {
-      if (fwa > balance) {
+      if (fwa > balance || fwa < 0) {
         toast.error("withdrawal amount greater than current balance", {
           position: "bottom-right",
           autoClose: 5000,

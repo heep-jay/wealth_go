@@ -30,7 +30,8 @@ const Deposits = () => {
 
   useEffect(() => {
     if (!isLoading || data) {
-      setDeposit(data.deposits);
+      console.log(data);
+      setDeposit(data.newDeposits);
     }
   }, [data, isLoading]);
 

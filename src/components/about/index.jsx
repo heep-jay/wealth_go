@@ -3,9 +3,10 @@ import "./index.css";
 import country from "../../assets/mining.png";
 import farmer from "../../assets/about.png";
 import aboutus from "../../assets/aboutus.jpeg";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 const About = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   console.log(location.pathname, "hey", window.location.pathname);
   return (
     <div className="about">
@@ -20,14 +21,21 @@ const About = () => {
           </h2>
           <p className="description">
             We are building the crypto economy – a more fair, accessible,
-            efficient, and transparent financial system enabled by crypto.
-            We started in 2017 with the radical idea that anyone, anywhere,
-            should be able to easily and securely invest in Agriculture,
-            Gold mining and Real estate through cryptocurrency. Today, we offer a
-            trusted and easy-to-use platform for accessing the broader cryptoeconomy.
+            efficient, and transparent financial system enabled by crypto. We
+            started in 2017 with the radical idea that anyone, anywhere, should
+            be able to easily and securely invest in Agriculture, Gold mining
+            and Real estate through cryptocurrency. Today, we offer a trusted
+            and easy-to-use platform for accessing the broader cryptoeconomy.
           </p>
           <div className="box">
-            <button className="about-cta" >More about us</button>
+            <button
+              className="about-cta"
+              onClick={() => {
+                navigate("/about");
+              }}
+            >
+              More about us
+            </button>
             {/* <a class="button" href="#popup1">More about us</a> */}
           </div>
         </div>

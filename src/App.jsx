@@ -20,6 +20,7 @@ import Plan from "./pages/plans";
 import ChangePassword from "./pages/changepassword";
 import VerifyEmail from "./components/verifyEmail";
 import InvestmentPlans from "pages/investmentlogs";
+import Aboutpage from "pages/AboutPage";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<Aboutpage />} />
             <Route path="/faq" element={<Faqs />} />
           </Route>
           <Route element={<AuthLayout />}>

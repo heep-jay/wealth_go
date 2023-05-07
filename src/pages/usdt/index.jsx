@@ -35,10 +35,6 @@ const Usdt = () => {
   }, []);
 
   const sendPayment = async () => {
-    const formData = new FormData();
-    formData.append("amount", localStorage.getItem("amount"));
-
-    console.log(formData);
     const response = await fetch(
       `https://wealthgo.onrender.com/transactions/${id}/deposit`,
       {
@@ -72,14 +68,6 @@ const Usdt = () => {
       navigate("/deposits");
       localStorage.removeItem("amount");
     }
-    // try {
-    //   await deposit(id, 500)
-    //     .unwrap()
-    //     .then((fulfilled) => {
-    //       console.log({ fulfilled, amount });
-    //       navigate("/deposits");
-    //     });
-    // } catch (error) {}
   };
 
   return (

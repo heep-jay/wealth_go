@@ -27,7 +27,8 @@ const Login = () => {
   useEffect(() => {
     if (user) {
       console.log(user);
-      navigate("/dashboard");
+      // navigate("/dashboard");
+      window.location.href = "https://wealth-go.vercel.app/dashboard";
     }
   }, [user, navigate]);
 
@@ -44,10 +45,12 @@ const Login = () => {
               })
             );
           // redirect("/dashboard");
+          window.location.href = "https://wealth-go.vercel.app/dashboard";
         });
     } catch (error) {}
     onSubmitProps.resetForm();
   };
+
   return (
     <div className="login">
       <div className="login-header">

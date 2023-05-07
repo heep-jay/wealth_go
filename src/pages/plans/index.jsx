@@ -272,7 +272,7 @@ const Plan = () => {
           <div className="planpage-cards">
             <div className="planpage-card">
               <h5>plan 1</h5>
-              <h1 className="plan-per">30%</h1>
+              <h1 className="plan-per">10%</h1>
               <div className="plan-details">
                 <p>AFTER 24 HOURS </p>
                 <p>Min : $30 </p>
@@ -287,7 +287,7 @@ const Plan = () => {
           <div className="planpage-cards">
             <div className="planpage-card">
               <h5>plan 2</h5>
-              <h1 className="plan-per">50%</h1>
+              <h1 className="plan-per">30%</h1>
               <div className="plan-details">
                 <p>AFTER 24 HOURS </p>
                 <p>Min : $500 </p>
@@ -304,7 +304,7 @@ const Plan = () => {
           <div className="planpage-cards">
             <div className="planpage-card">
               <h5>plan 3</h5>
-              <h1 className="plan-per">75%</h1>
+              <h1 className="plan-per">60%</h1>
               <div className="plan-details">
                 <p>AFTER 24 HOURS </p>
                 <p>Min : $1000 </p>

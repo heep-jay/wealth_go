@@ -25,6 +25,7 @@ export const api = createApi({
     "User",
     "Users",
     "UserDashboard",
+    "Tickets",
     "Transactions",
     "Investments",
     "Balance",
@@ -54,6 +55,13 @@ export const api = createApi({
       }),
 
       providesTags: ["Users"],
+    }),
+    getTickets: build.query({
+      query: (id) => ({
+        url: `tickets/${id}`,
+      }),
+
+      providesTags: ["Tickets"],
     }),
     getTransactions: build.query({
       query: (id) => ({
@@ -153,6 +161,7 @@ export const {
   useGetUserQuery,
   useGetUsersQuery,
   useGetUserDashboardQuery,
+  useGetTicketsQuery,
   useGetUserInvestmentsQuery,
   useGetUserBalanceQuery,
   useRegisterUserMutation,

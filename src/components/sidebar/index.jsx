@@ -20,8 +20,8 @@ import {
   HomeOutlined,
   ChevronRightOutlined,
   ReceiptLongOutlined,
-  UpgradeOutlined,
-  PublicOutlined,
+  BarChart,
+  SupportAgent,
   PersonOutlineOutlined,
 } from "@mui/icons-material";
 
@@ -36,7 +36,7 @@ const navItems = [
 
   {
     text: "Investment-plans",
-    icon: <UpgradeOutlined />,
+    icon: <BarChart />,
   },
   {
     text: "Deposits",
@@ -54,6 +54,10 @@ const navItems = [
   {
     text: "Profile",
     icon: <PersonOutlineOutlined />,
+  },
+  {
+    text: "Support",
+    icon: <SupportAgent />,
   },
 ];
 

@@ -21,6 +21,7 @@ import ChangePassword from "./pages/changepassword";
 import VerifyEmail from "./components/verifyEmail";
 import InvestmentPlans from "pages/investmentlogs";
 import Aboutpage from "pages/AboutPage";
+import Support from "pages/support";
 
 const App = () => {
   return (
@@ -43,6 +44,7 @@ const App = () => {
             <Route path="/deposits/payment" element={<Usdt />} />
             <Route path="/withdraw" element={<Withdraw />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/support" element={<Support />} />
             <Route
               path="/profile/changepassword"
               element={<ChangePassword />}

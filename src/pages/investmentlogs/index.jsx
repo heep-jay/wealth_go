@@ -1,67 +1,66 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "components/header";
 import { DataGrid } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
-import { useGetTransactionsQuery } from "state/api";
+import { useGetUserInvestmentsQuery } from "state/api";
 import { useSelector } from "react-redux";
-import DataGridCustomToolbar from "components/DataGridCustomToolbar";
-const Transactions = () => {
-  const id = useSelector((state) => state.global.user?._id);
-  const { data, isLoading } = useGetTransactionsQuery(id);
-  const [search, setSearch] = useState("");
-  const [searchInput, setSearchInput] = useState("");
 
+const InvestmentPlans = () => {
+  const id = useSelector((state) => state.global.user?._id);
+  const { data, isLoading } = useGetUserInvestmentsQuery(id);
   const columns = [
     {
       field: "_id",
-      headerName: "Transaction ID",
+      headerName: "TXID",
       minWidth: 200,
       flex: 0.5,
     },
+
     {
-      field: "customerId",
-      headerName: "Customer ID",
-      minWidth: 200,
-      flex: 0.5,
-    },
-    {
-      field: "transactionType",
-      headerName: "Transaction Type",
+      field: "planName",
+      headerName: "Plan Type",
       width: 150,
       minWidth: 200,
       flex: 0.4,
     },
 
     {
-      field: "amount",
+      field: "investAmount",
       headerName: "Amount",
       minWidth: 100,
       flex: 0.3,
     },
     {
-      field: "paymentMethod",
-      headerName: "Method",
+      field: "interest",
+      headerName: "Interest",
       minWidth: 100,
       flex: 0.3,
     },
     {
-      field: "verification",
-      headerName: "Verification",
+      field: "paymentStat",
+      headerName: "Status",
       minWidth: 100,
       flex: 0.3,
     },
     {
       field: "createdAt",
-      headerName: "Created At",
+      headerName: "Start Date",
+      minWidth: 100,
+      flex: 0.5,
+    },
+    {
+      field: "expirationTime",
+      headerName: "End Date",
       minWidth: 100,
       flex: 0.5,
     },
   ];
+
   return (
     <Box m="1.5rem 2.5rem">
       <Header
-        dashtitle="TRANSACTIONS"
-        dashsub="See your list of transactions"
+        dashtitle="Investment Logs"
+        dashsub="See your list of investments"
       />
       <Box
         mt="40px"
@@ -99,14 +98,10 @@ const Transactions = () => {
           getRowId={(row) => row._id}
           rows={data || []}
           columns={columns}
-          components={{ Toolbar: DataGridCustomToolbar }}
-          componentsProps={{
-            toolbar: { searchInput, setSearchInput, setSearch },
-          }}
         />
       </Box>
     </Box>
   );
 };
 
-export default Transactions;
+export default InvestmentPlans;

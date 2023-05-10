@@ -1,5 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+
+import "react-toastify/dist/ReactToastify.css";
 import React from "react";
 import Home from "./pages/home";
 import Layout from "./pages/layout";
@@ -16,6 +18,10 @@ import Usdt from "./pages/usdt";
 import Withdraw from "./pages/withdraw";
 import Plan from "./pages/plans";
 import ChangePassword from "./pages/changepassword";
+import VerifyEmail from "./components/verifyEmail";
+import InvestmentPlans from "pages/investmentlogs";
+import Aboutpage from "pages/AboutPage";
+import Support from "pages/support";
 
 const App = () => {
   return (
@@ -24,11 +30,13 @@ const App = () => {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<Aboutpage />} />
             <Route path="/faq" element={<Faqs />} />
           </Route>
           <Route element={<AuthLayout />}>
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/register" element={<VerifyEmail />} />
+            <Route path="/register/verify" element={<Register />} />
           </Route>
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
@@ -36,11 +44,14 @@ const App = () => {
             <Route path="/deposits/payment" element={<Usdt />} />
             <Route path="/withdraw" element={<Withdraw />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/support" element={<Support />} />
             <Route
               path="/profile/changepassword"
               element={<ChangePassword />}
             />
-            <Route path="/plans" element={<Plan />} />
+            <Route path="/investment-plans" element={<Plan />} />
+
+            <Route path="/investment-logs" element={<InvestmentPlans />} />
 
             <Route path="/transactions" element={<Transactions />} />
           </Route>

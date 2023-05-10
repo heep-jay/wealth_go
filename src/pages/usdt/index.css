@@ -55,3 +55,12 @@
   max-width: 200px;
   object-fit: contain;
 }
+
+.usdt-paybtn button {
+  padding: 1rem 2rem;
+  border: none;
+  background: #165e3b;
+  color: #fff;
+  border-radius: 10px;
+  margin: 2rem 0 0 2.5rem;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import Header from "../../components/header";
 import usdt from "../../assets/usdt.png";
@@ -15,12 +15,27 @@ import {
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useGetDepositsQuery } from "state/api";
+import { useSelector } from "react-redux";
+import { DataGrid } from "@mui/x-data-grid";
 
 const Deposits = () => {
+  const id = useSelector((state) => state.global.user?._id);
+  console.log(id);
   const [open, setOpen] = useState(false);
   const [amount, setAmount] = useState(500);
+  const { data, isLoading } = useGetDepositsQuery(id !== undefined ? id : "");
   const navigate = useNavigate();
+  const [deposit, setDeposit] = useState([]);
 
+  useEffect(() => {
+    if (!isLoading || data) {
+      console.log(data);
+      setDeposit(data.newDeposits);
+    }
+  }, [data, isLoading]);
+
+  console.log(data);
   const handleOpen = () => {
     // localStorage.setItem("currency", currency);
     setOpen(true);
@@ -28,6 +43,7 @@ const Deposits = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
   const style = {
     position: "absolute",
     top: "50%",
@@ -40,15 +56,60 @@ const Deposits = () => {
     boxShadow: 24,
     padding: "2rem 1.5rem",
   };
+  const columns = [
+    {
+      field: "_id",
+      headerName: "Transaction ID",
+      minWidth: 200,
+      flex: 0.5,
+    },
+    {
+      field: "customerId",
+      headerName: "Customer ID",
+      minWidth: 200,
+      flex: 0.5,
+    },
+    {
+      field: "transactionType",
+      headerName: "Transaction Type",
+      width: 150,
+      minWidth: 200,
+      flex: 0.5,
+    },
 
+    {
+      field: "amount",
+      headerName: "Amount",
+      minWidth: 100,
+      flex: 0.3,
+    },
+    {
+      field: "paymentMethod",
+      headerName: "Method",
+      minWidth: 100,
+      flex: 0.3,
+    },
+    {
+      field: "verification",
+      headerName: "Verification",
+      minWidth: 100,
+      flex: 0.5,
+    },
+    {
+      field: "createdAt",
+      headerName: "Created At",
+      minWidth: 100,
+      flex: 0.5,
+    },
+  ];
   return (
     <div className="deposits">
       <Header dashtitle="Deposits" dashsub="Make deposits" />
       <div className="deposits-container">
         <div className="deposits-cards">
           <div className="deposit-card">
-            <img src={btc} alt="usdt" />
-            <h5>Bitcoin (BTC)</h5>
+            <img src={usdt} alt="usdt" />
+            <h5>Tether (USDT)</h5>
             <div className="deposit-btn">
               <button
                 onClick={() => {
@@ -62,6 +123,7 @@ const Deposits = () => {
           </div>
           <div className="deposit-card">
             <img src={eth} alt="usdt" />
+
             <h5>Ethereum (ETH)</h5>
             <div className="deposit-btn">
               <button
@@ -75,8 +137,9 @@ const Deposits = () => {
             </div>
           </div>
           <div className="deposit-card">
-            <img src={usdt } alt="usdt" />
-            <h5>USDT - Tron (USDT)</h5>
+            <img src={btc} alt="usdt" />
+            <h5>Bitcoin (BTC)</h5>
+
             <div className="deposit-btn">
               <button
                 onClick={() => {
@@ -135,6 +198,44 @@ const Deposits = () => {
           </Box>
         </Modal>
       </div>
+      <Box
+        mt="40px"
+        height="55vh"
+        // maxWidth={"1200px"}
+        // m="0 auto"
+        width="98%"
+        sx={{
+          "& .MuiDataGrid-root": {
+            border: "none",
+          },
+          "& .MuiDataGrid-cell": {
+            borderBottom: "none",
+          },
+          "& .MuiDataGrid-columnHeaders": {
+            backgroundColor: "#165e3b",
+            color: "#fffff",
+            borderBottom: "none",
+          },
+          "& .MuiDataGrid-virtualScroller": {
+            backgroundColor: "#f5f5f5",
+          },
+          "& .MuiDataGrid-footerContainer": {
+            backgroundColor: "#165e3b",
+            color: "#165e3b",
+            borderTop: "none",
+          },
+          "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+            color: `${"#165e3b"} !important`,
+          },
+        }}
+      >
+        <DataGrid
+          loading={isLoading || !data}
+          getRowId={(row) => row._id}
+          rows={deposit || []}
+          columns={columns}
+        />
+      </Box>
     </div>
   );
 };

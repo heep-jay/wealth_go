@@ -107,3 +107,13 @@
   align-items: center;
   flex: 1;
 }
+
+.p-dep {
+  font-size: 14px;
+}
+
+.p-dep span {
+  color: #165e3b;
+  font-size: 146x;
+  font-weight: 700;
+}

@@ -11,19 +11,17 @@ import {
   ListItemIcon,
   ListItemText,
   Typography,
-  useTheme,
 } from "@mui/material";
 import PaymentsIcon from "@mui/icons-material/Payments";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import {
   ChevronLeft,
   SettingsOutlined,
   HomeOutlined,
   ChevronRightOutlined,
-  ShoppingCartOutlined,
-  Groups2Outlined,
   ReceiptLongOutlined,
-  UpgradeOutlined,
-  PublicOutlined,
+  BarChart,
+  SupportAgent,
   PersonOutlineOutlined,
 } from "@mui/icons-material";
 
@@ -35,18 +33,18 @@ const navItems = [
     text: "Dashboard",
     icon: <HomeOutlined />,
   },
-  // {
-  //   text: "Client Facing",
-  //   icon: null,
-  // },
 
+  {
+    text: "Investment-plans",
+    icon: <BarChart />,
+  },
   {
     text: "Deposits",
     icon: <PaymentsIcon />,
   },
   {
     text: "Withdraw",
-    icon: <PublicOutlined />,
+    icon: <AccountBalanceIcon />,
   },
   {
     text: "Transactions",
@@ -54,12 +52,12 @@ const navItems = [
   },
 
   {
-    text: "Plans",
-    icon: <UpgradeOutlined />,
-  },
-  {
     text: "Profile",
     icon: <PersonOutlineOutlined />,
+  },
+  {
+    text: "Support",
+    icon: <SupportAgent />,
   },
 ];
 
@@ -73,11 +71,9 @@ const Sidebar = ({
   const { pathname } = useLocation();
   const [active, setActive] = useState("");
   const navigate = useNavigate();
-  const theme = useTheme();
 
   useEffect(() => {
     setActive(pathname.substring(1));
-    console.log(pathname.substring(1));
   }, [pathname]);
 
   return (
@@ -188,8 +184,7 @@ const Sidebar = ({
                   fontSize="0.9rem"
                   //   sx={{ color: theme.palette.secondary[100] }}
                 >
-                  {/* {user.name} */}
-                  jubril
+                  {user.username}
                 </Typography>
                 <Typography
                   fontSize="0.8rem"

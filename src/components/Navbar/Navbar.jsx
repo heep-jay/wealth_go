@@ -15,7 +15,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <h1 className="nav-logo">WealthGo</h1>
+        <h1 className="nav-logo" onClick={() => navigate("/")}>
+          WealthGo
+        </h1>
         <ul className="nav-links">
           <li className="nav-listItems">
             <Link to="/">Home</Link>

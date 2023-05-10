@@ -15,6 +15,7 @@
 .nav-logo {
   color: #fff;
   font-family: "Goldman";
+  cursor: pointer;
 }
 .nav-links {
   /* display: flex; */
@@ -30,7 +31,7 @@
 }
 .nav-listItems a {
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
   font-size: 16.5px;
   transition: all ease-in-out 0.3s;
 }

@@ -22,6 +22,8 @@ import VerifyEmail from "./components/verifyEmail";
 import InvestmentPlans from "pages/investmentlogs";
 import Aboutpage from "pages/AboutPage";
 import Support from "pages/support";
+import AdminLogin from "pages/adminlogin";
+import AdminLayout from "pages/AdminLayout";
 
 const App = () => {
   return (
@@ -35,6 +37,7 @@ const App = () => {
           </Route>
           <Route element={<AuthLayout />}>
             <Route path="/login" element={<Login />} />
+            <Route path="/admin-login" element={<AdminLogin />} />
             <Route path="/register" element={<VerifyEmail />} />
             <Route path="/register/verify" element={<Register />} />
           </Route>
@@ -54,6 +57,9 @@ const App = () => {
             <Route path="/investment-logs" element={<InvestmentPlans />} />
 
             <Route path="/transactions" element={<Transactions />} />
+          </Route>
+          <Route element={<AdminLayout />}>
+            <Route path="/admin-dash" element={<AdminLogin />} />
           </Route>
         </Routes>
       </BrowserRouter>

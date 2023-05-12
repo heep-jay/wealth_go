@@ -3,6 +3,9 @@ import "./index.css";
 import aboutpic from "../../assets/business.jpg";
 import mission from "../../assets/mission.png";
 import values from "../../assets/values.png";
+import avatar from "../../assets/avatar.jpg";
+import avatar2 from "../../assets/avatar2.jpg";
+import avatar3 from "../../assets/avatar3.jpg";
 const Aboutpage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -66,6 +69,32 @@ const Aboutpage = () => {
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
                 omnis laboriosam, deleniti
               </p>
+            </div>
+          </div>
+          <div className="about-team">
+            <h2 className="team-header">Meet Our Team</h2>
+            <div className="team-container">
+              <div className="team-leaders">
+                <img src={avatar} alt="" className="team-exec" />
+                <div className="leaders-text">
+                  <h5>name</h5>
+                  <p>Title</p>
+                </div>
+              </div>
+              <div className="team-leaders">
+                <img src={avatar2} alt="" className="team-exec" />
+                <div className="leaders-text">
+                  <h5>name</h5>
+                  <p>Title</p>
+                </div>
+              </div>
+              <div className="team-leaders">
+                <img src={avatar3} alt="" className="team-exec" />
+                <div className="leaders-text">
+                  <h5>name</h5>
+                  <p>Title</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

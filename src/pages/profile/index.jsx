@@ -11,6 +11,7 @@ import { useGetUserQuery } from "state/api";
 
 const Profile = () => {
   const id = useSelector((state) => state.global.user?._id);
+  const user = useSelector((state) => state.global.user);
   const token = useSelector((state) => state.global.token);
 
   const { data, isLoading } = useGetUserQuery(id);
@@ -87,7 +88,15 @@ const Profile = () => {
             <img src={avatar} alt="profile" />
           </div>
           <div className="profile-change">
-            <Link to="/profile/changepassword">Change Password</Link>
+            <Link
+              to={
+                user.role === "admin"
+                  ? "/admin/changepassword"
+                  : "/profile/changepassword"
+              }
+            >
+              Change Password
+            </Link>
           </div>
         </div>
         <div className="profile-form">

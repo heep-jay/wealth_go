@@ -45,8 +45,7 @@ const AdminLogin = () => {
                 token: fulfilled.token,
               })
             );
-          window.location.href =
-            "https://wealthgo.onrender.com/admin-dashboard";
+          window.location.href = "https://wealth-go.vercel.app/admin-dashboard";
         });
     } catch (error) {
       console.log(error.message);

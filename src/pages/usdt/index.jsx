@@ -7,11 +7,13 @@ import { useSelector } from "react-redux";
 import { useDepositMutation } from "state/api";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-
+import { useGetWalletsQuery } from "state/api";
 const Usdt = () => {
+  const { data, isLoading } = useGetWalletsQuery();
   const [amount, setAmount] = useState(0);
   const [currency, setCurrency] = useState("");
   const [qr, setQr] = useState(null);
+  const [wallet, setWallet] = useState("");
   const id = useSelector((state) => state.global.user?._id);
   const [deposit] = useDepositMutation();
   const navigate = useNavigate();
@@ -23,16 +25,21 @@ const Usdt = () => {
     amount = JSON.parse(amount);
     setAmount(amount);
     setCurrency(currency);
-    if (currency === "USDT") {
-      setQr(usdt);
-    } else if (currency === "BTC") {
-      setQr(btc);
-    } else if (currency === "ETH") {
-      setQr(eth);
-    } else {
-      setQr(null);
+    if (!isLoading || data) {
+      if (currency === "USDT") {
+        setQr(data[0].usdtQr);
+        setWallet(data[0].usdtWallet);
+      } else if (currency === "BTC") {
+        setQr(data[0].btcQr);
+        setWallet(data[0].btcWallet);
+      } else if (currency === "ETH") {
+        setQr(data[0].ethQr);
+        setWallet(data[0].ethWallet);
+      } else {
+        setQr(null);
+      }
     }
-  }, []);
+  }, [isLoading, data]);
 
   const sendPayment = async () => {
     const response = await fetch(
@@ -86,10 +93,7 @@ const Usdt = () => {
               <li> Then go to your wallet app and make a payment.</li>
             </ol>
             <p>
-              Wallet address:{" "}
-              <span style={{ fontWeight: 600 }}>
-                "TAfdUWHHKMWbuTcMhMBkTFqnRY9ULvsV94"
-              </span>
+              Wallet address: <span style={{ fontWeight: 600 }}>{wallet}</span>
             </p>
             <p>
               In a few minutes after payment, your balance would be updated.

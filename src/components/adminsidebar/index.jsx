@@ -21,6 +21,7 @@ import {
   ReceiptLongOutlined,
   BarChart,
   SupportAgent,
+  Wallet,
   PersonOutlineOutlined,
 } from "@mui/icons-material";
 
@@ -29,25 +30,27 @@ import avatar from "../../assets/avatar.jpg";
 
 const navItems = [
   {
-    text: "Dashboard",
+    text: "Admin-Dashboard",
     icon: <HomeOutlined />,
   },
-
   {
     text: "Customers",
     icon: <BarChart />,
   },
   {
-    text: "Transactions",
+    text: "All-Transactions",
     icon: <ReceiptLongOutlined />,
   },
-
   {
-    text: "Profile",
+    text: "Wallets",
+    icon: <Wallet />,
+  },
+  {
+    text: "Edit-Profile",
     icon: <PersonOutlineOutlined />,
   },
   {
-    text: "Tickets",
+    text: "All-Tickets",
     icon: <SupportAgent />,
   },
 ];

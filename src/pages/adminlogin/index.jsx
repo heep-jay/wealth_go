@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Formik } from "formik";
 import * as yup from "yup";
 import { TextField } from "@mui/material";
-import { useLoginUserMutation } from "state/api";
+import { useAdminLoginMutation } from "state/api";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setLogin } from "state";
@@ -22,7 +22,7 @@ const AdminLogin = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.global.user);
-  const [loginNewUser] = useLoginUserMutation();
+  const [loginAdminUser] = useAdminLoginMutation();
 
   //   useEffect(() => {
   //     if (user) {
@@ -34,9 +34,10 @@ const AdminLogin = () => {
 
   const handleFormSubmit = async (values, onSubmitProps) => {
     try {
-      await loginNewUser(JSON.stringify(values))
+      await loginAdminUser(JSON.stringify(values))
         .unwrap()
         .then((fulfilled) => {
+          console.log(fulfilled);
           if (fulfilled)
             dispatch(
               setLogin({
@@ -44,10 +45,11 @@ const AdminLogin = () => {
                 token: fulfilled.token,
               })
             );
-          // redirect("/dashboard");
-          window.location.href = "http://localhost:3000/dashboard";
+          window.location.href = "https://wealth-go.vercel.app/admin-dashboard";
         });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error.message);
+    }
     onSubmitProps.resetForm();
   };
 
@@ -102,7 +104,6 @@ const AdminLogin = () => {
                 variant="outlined"
               />
             </div>
-
             <div className="login-btn">
               <button type="submit">Log In</button>
             </div>

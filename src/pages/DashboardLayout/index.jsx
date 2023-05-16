@@ -15,6 +15,7 @@ const DashboardLayout = () => {
   const navigate = useNavigate();
   const token = useSelector((state) => state.global?.token);
   const id = useSelector((state) => state.global.user?._id);
+  const user = useSelector((state) => state.global?.user);
   const { data, isLoading } = useGetUserQuery(id ? id : skipToken);
 
   useEffect(() => {

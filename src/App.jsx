@@ -24,6 +24,11 @@ import Aboutpage from "pages/AboutPage";
 import Support from "pages/support";
 import AdminLogin from "pages/adminlogin";
 import AdminLayout from "pages/AdminLayout";
+import Customers from "pages/customers";
+import AdminDash from "pages/admindash";
+import AdminTransactions from "pages/admintransactions";
+import AdminTickets from "pages/admintickets";
+import Wallet from "pages/wallets";
 
 const App = () => {
   return (
@@ -59,7 +64,13 @@ const App = () => {
             <Route path="/transactions" element={<Transactions />} />
           </Route>
           <Route element={<AdminLayout />}>
-            <Route path="/admin-dash" element={<AdminLogin />} />
+            <Route path="/admin-dashboard" element={<AdminDash />} />
+            <Route path="/customers" element={<Customers />} />
+            <Route path="/all-transactions" element={<AdminTransactions />} />
+            <Route path="/wallets" element={<Wallet />} />
+            <Route path="/edit-profile" element={<Profile />} />
+            <Route path="/all-tickets" element={<AdminTickets />} />
+            <Route path="/admin/changepassword" element={<ChangePassword />} />
           </Route>
         </Routes>
       </BrowserRouter>

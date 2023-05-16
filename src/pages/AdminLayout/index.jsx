@@ -20,7 +20,7 @@ const AdminLayout = () => {
   const { data, isLoading } = useGetUserQuery(id ? id : skipToken);
 
   useEffect(() => {
-    if (token === null && user.role !== "admin") {
+    if (token === null || user.role !== "admin") {
       dispatch(setLogout());
       navigate("/login");
     }
@@ -29,7 +29,7 @@ const AdminLayout = () => {
       // setResponse(data);
       console.log(data);
     }
-  }, [token, navigate, data, isLoading]);
+  }, [token, navigate, data, isLoading, user, dispatch]);
 
   if (!isLoading && data?._id !== id) return null;
   return (

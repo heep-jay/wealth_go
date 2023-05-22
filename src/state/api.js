@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { json } from "react-router-dom";
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://wealthgo.onrender.com/",
+    baseUrl:
+      // "https://wealthgo.onrender.com/",
 
-    // "http://localhost:5000/",
+      "http://localhost:5000/",
     // process.env.REACT_APP_BASE_URL,
     prepareHeaders: (headers, { getState }) => {
       // By default, if we have a token in the store, let's use that for authenticated requests

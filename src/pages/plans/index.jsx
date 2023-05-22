@@ -21,6 +21,7 @@ import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 
 const Plan = () => {
+  const email = useSelector((state) => state.global.user?.email);
   const [open, setOpen] = useState(false);
   const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
@@ -83,6 +84,7 @@ const Plan = () => {
           method: "POST",
           body: JSON.stringify({
             customerId: id,
+            email: email,
             planName: "plan1",
             investAmount: amo,
             percent: 0.1,
@@ -134,6 +136,7 @@ const Plan = () => {
           method: "POST",
           body: JSON.stringify({
             customerId: id,
+            email: email,
             planName: "plan2",
             investAmount: amo,
             percent: 0.3,
@@ -184,7 +187,8 @@ const Plan = () => {
           method: "POST",
           body: JSON.stringify({
             customerId: id,
-            planName: "plan1",
+            email: email,
+            planName: "plan3",
             investAmount: amo,
             percent: 0.6,
           }),
@@ -234,7 +238,8 @@ const Plan = () => {
           method: "POST",
           body: JSON.stringify({
             customerId: id,
-            planName: "plan1",
+            email: email,
+            planName: "plan4",
             investAmount: amo,
             percent: 1.0,
           }),

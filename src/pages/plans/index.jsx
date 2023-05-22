@@ -116,7 +116,7 @@ const Plan = () => {
 
   const subPlan2 = async () => {
     let amo = amount;
-    if (amo > 999 || amo < 599) {
+    if (amo > 999 || amo < 499) {
       toast.error("Invalid Min or Max Amount", {
         position: "bottom-right",
         autoClose: 5000,

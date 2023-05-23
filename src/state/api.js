@@ -36,6 +36,8 @@ export const api = createApi({
     "Deposits",
     "Withdrawals",
     "Register",
+    "ForgotPassword",
+    "FogotVerify",
     "Verify",
     "Login",
     "MakeDeposit",
@@ -140,6 +142,28 @@ export const api = createApi({
       }),
       invalidatesTags: ["Register"],
     }),
+    forgotPassword: build.mutation({
+      query: (email) => ({
+        url: "auth/forgot-password",
+        method: "POST",
+        body: email,
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      }),
+      invalidatesTags: ["ForgotPassword"],
+    }),
+    forgotVerify: build.mutation({
+      query: (payload) => ({
+        url: "auth/forgot-password/verify",
+        method: "PATCH",
+        body: payload,
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      }),
+      invalidatesTags: ["FogotVerify"],
+    }),
     verifyUser: build.mutation({
       query: (payload) => ({
         url: "auth/signup/verify",
@@ -233,6 +257,8 @@ export const {
   useGetUserInvestmentsQuery,
   useGetUserBalanceQuery,
   useRegisterUserMutation,
+  useForgotPasswordMutation,
+  useForgotVerifyMutation,
   useVerifyUserMutation,
   useLoginUserMutation,
   useAdminLoginMutation,

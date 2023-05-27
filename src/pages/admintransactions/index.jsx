@@ -19,7 +19,7 @@ const AdminTransactions = () => {
 
   const handleUpdate = async (id, email, amount, action) => {
     const response = await fetch(
-      `https://wealthgo.onrender.com/transactions/update`,
+      `${process.env.REACT_APP_BASE_URL}transactions/update`,
       {
         method: "PATCH",
         headers: {

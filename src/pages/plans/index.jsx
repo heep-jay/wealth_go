@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Plans from "../../components/plans";
 import Header from "components/header";
 
@@ -19,6 +19,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
+import { useGetUserBalanceQuery } from "state/api";
 
 const Plan = () => {
   const email = useSelector((state) => state.global.user?.email);
@@ -28,7 +29,16 @@ const Plan = () => {
   const [open3, setOpen3] = useState(false);
   const [amount, setAmount] = useState(0);
   const id = useSelector((state) => state.global.user?._id);
+  const { data: userGetBalance, isLoading } = useGetUserBalanceQuery(id);
+  const [balance, setBalance] = useState();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isLoading || userGetBalance) {
+      console.log(userGetBalance);
+      setBalance(userGetBalance.currentBalance);
+    }
+  }, [isLoading, userGetBalance]);
 
   const handleClose = () => {
     setOpen(false);
@@ -64,7 +74,20 @@ const Plan = () => {
 
   const subPlan1 = async () => {
     let amo = amount;
-    if (amo > 499 || amo < 30) {
+    if (amo > balance) {
+      toast.error("Amount exceeds current balance", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      handleClose();
+      setAmount("");
+    } else if (amo > 499 || amo < 30) {
       toast.error("Invalid Min or Max Amount", {
         position: "bottom-right",
         autoClose: 5000,
@@ -79,7 +102,7 @@ const Plan = () => {
       setAmount("");
     } else {
       const response = await fetch(
-        `https://wealthgo.onrender.com/investments`,
+        `${process.env.REACT_APP_BASE_URL}investments`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -131,7 +154,7 @@ const Plan = () => {
       setAmount("");
     } else {
       const response = await fetch(
-        `https://wealthgo.onrender.com/investments`,
+        `${process.env.REACT_APP_BASE_URL}investments`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -182,7 +205,7 @@ const Plan = () => {
       setAmount("");
     } else {
       const response = await fetch(
-        `https://wealthgo.onrender.com/investments`,
+        `${process.env.REACT_APP_BASE_URL}investments`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -233,7 +256,7 @@ const Plan = () => {
       setAmount("");
     } else {
       const response = await fetch(
-        `https://wealthgo.onrender.com/investments`,
+        `${process.env.REACT_APP_BASE_URL}investments`,
         {
           method: "POST",
           body: JSON.stringify({

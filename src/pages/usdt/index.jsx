@@ -23,7 +23,7 @@ const Usdt = () => {
   useEffect(() => {
     let amount = localStorage.getItem("amount");
     let currency = localStorage.getItem("currency");
-
+    console.log(process.env.REACT_APP_BASE_URL);
     amount = JSON.parse(amount);
     setAmount(amount);
     setCurrency(currency);
@@ -45,7 +45,7 @@ const Usdt = () => {
 
   const sendPayment = async () => {
     const response = await fetch(
-      `https://wealthgo.onrender.com/transactions/${id}/deposit`,
+      `${process.env.REACT_APP_BASE_URL}transactions/${id}/deposit`,
       {
         method: "POST",
         body: JSON.stringify({

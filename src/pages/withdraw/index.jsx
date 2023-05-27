@@ -34,7 +34,7 @@ const Withdraw = () => {
   const [walletAddress, setWalletAddress] = useState("");
 
   useEffect(() => {
-    if (!isLoading || userGetBalance) {
+    if (!isLoading || data || userGetBalance) {
       console.log(userGetBalance);
       setWithdraw(data.withdrawals);
       setBalance(userGetBalance.currentBalance);

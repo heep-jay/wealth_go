@@ -63,8 +63,22 @@ const Register = () => {
           localStorage.removeItem("email-reg");
           navigate("/login");
         });
-    } catch (error) {}
-    onSubmitProps.resetForm();
+      onSubmitProps.resetForm();
+    } catch (error) {
+      if (error) {
+        console.log(error);
+        toast.error(`${error.data.error} or OTP is Invalid or has expired`, {
+          position: "bottom-right",
+          autoClose: 9000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }
+    }
   };
   return (
     <div className="register">
@@ -210,7 +224,13 @@ const Register = () => {
               T & C & Privacy Policy"
             />
             <div className="login-btn">
-              <button disabled={!terms}>Sign Up</button>
+              <button
+                type="submit"
+                style={{ cursor: "pointer" }}
+                disabled={!terms}
+              >
+                Sign Up
+              </button>
             </div>
             <p className="description">
               Already have an account?

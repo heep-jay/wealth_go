@@ -7,9 +7,10 @@ import {
   AddCardOutlined,
 } from "@mui/icons-material";
 import FlexBetween from "../../components/FlexBetween";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useGetUserDashboardQuery } from "state/api";
 import { useNavigate } from "react-router-dom";
+import { setBalance } from "state";
 const Dashboard = () => {
   const id = useSelector((state) => state.global.user?._id);
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ const Dashboard = () => {
   const [currPlanAmount, setCurrPlanAmount] = useState();
   const [activeInvestments, setActiveInvestments] = useState();
   const [plan, setPlan] = useState();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!isLoading || data) {
@@ -38,8 +40,10 @@ const Dashboard = () => {
       setCurrPlanAmount(data.currPlanAmount);
       setActiveInvestments(data.activeInvestments);
       setPlan(data.plan);
+
+      dispatch(setBalance(data.currentBalance));
     }
-  }, [isLoading, data]);
+  }, [isLoading, dispatch, data]);
 
   console.log(data);
   // const {

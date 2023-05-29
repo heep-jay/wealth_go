@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import { Link } from "react-router-dom";
 import { Formik } from "formik";
@@ -8,6 +8,7 @@ import { useLoginUserMutation } from "state/api";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, redirect } from "react-router-dom";
 import { setLogin } from "state";
+import { ToastContainer, toast } from "react-toastify";
 
 const loginSchema = yup.object().shape({
   email: yup.string().email("invalid email").required("required"),
@@ -47,8 +48,21 @@ const Login = () => {
           // redirect("/dashboard");
           window.location.href = "https://wealth-go.vercel.app/dashboard";
         });
-    } catch (error) {}
-    onSubmitProps.resetForm();
+      onSubmitProps.resetForm();
+    } catch (error) {
+      if (error) {
+        toast.error(`${error.data.msg}`, {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }
+    }
   };
 
   return (
@@ -108,7 +122,9 @@ const Login = () => {
               </button>
             </div>
             <div className="login-btn">
-              <button type="submit">Log In</button>
+              <button type="submit" style={{ cursor: "pointer" }}>
+                Log In
+              </button>
             </div>
             <p className="description">
               Dont have an account?{" "}
@@ -119,6 +135,18 @@ const Login = () => {
           </form>
         )}
       </Formik>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };

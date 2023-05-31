@@ -29,13 +29,15 @@
 .forgot-btn {
   width: 100%;
 }
-.forgot-btn button {
+.forget a {
   float: right;
+  text-decoration: none;
   border: none;
   background: none;
-}
-.forgot-btn button:hover {
   color: #165e3b;
+}
+.forget a:hover {
+  font-weight: 600;
 }
 .login-btn button {
   margin-top: 0.2rem;

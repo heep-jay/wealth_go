@@ -102,7 +102,7 @@ const Plan = () => {
       setAmount("");
     } else {
       const response = await fetch(
-        `${process.env.REACT_APP_BASE_URL}investments`,
+        `https://wealthgo.onrender.com/investments`,
         {
           method: "POST",
           body: JSON.stringify({

@@ -35,8 +35,11 @@ const Withdraw = () => {
 
   useEffect(() => {
     if (!isLoading || userGetBalance) {
-      console.log(userGetBalance.currentBalance);
-      setWithdraw(data.withdrawals);
+      if (data.withdrawals !== null || data === []) {
+        setWithdraw(data.withdrawals);
+      } else {
+        setWithdraw([]);
+      }
       setBalance(userGetBalance.currentBalance);
     }
   }, [data, isLoading, userGetBalance]);
@@ -474,7 +477,7 @@ const Withdraw = () => {
           loading={isLoading || !data}
           getRowId={(row) => row._id}
           // rows={data.withdrawals || []}
-          rows={withdraw || []}
+          rows={withdraw !== null && withdraw !== undefined ? withdraw : []}
           columns={columns}
         />
       </Box>

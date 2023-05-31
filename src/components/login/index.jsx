@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./index.css";
 import { Link } from "react-router-dom";
 import { Formik } from "formik";
@@ -6,7 +6,7 @@ import * as yup from "yup";
 import { TextField } from "@mui/material";
 import { useLoginUserMutation } from "state/api";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { setLogin } from "state";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -116,15 +116,16 @@ const Login = () => {
                 variant="outlined"
               />
             </div>
-            <div className="forgot-btn">
-              <button onClick={() => navigate("/forgot-password")}>
-                Forgot passowrd ?
-              </button>
-            </div>
+
             <div className="login-btn">
               <button type="submit" style={{ cursor: "pointer" }}>
                 Log In
               </button>
+            </div>
+            <div className="forgot-btn">
+              <span className="forget">
+                <Link to="/forgot-password">Forgot password?</Link>
+              </span>
             </div>
             <p className="description">
               Dont have an account?{" "}

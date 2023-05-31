@@ -35,7 +35,7 @@ const Withdraw = () => {
 
   useEffect(() => {
     if (!isLoading || userGetBalance) {
-      if (data.withdrawals !== null || data === []) {
+      if (data.withdrawals !== null || data.withdrawals === []) {
         setWithdraw(data.withdrawals);
       } else {
         setWithdraw([]);
